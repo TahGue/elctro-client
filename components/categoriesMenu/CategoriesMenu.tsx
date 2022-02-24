@@ -2,6 +2,7 @@ import Axios from 'axios';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { BiCategory } from 'react-icons/bi';
 import { useCategories } from '../../hooks/useCategories';
+import { ClickAway } from '../../ui/ClickAway';
 import CategoriesList from './CategoriesList';
 
 export default function CategoriesMenu() {
@@ -28,9 +29,11 @@ export default function CategoriesMenu() {
         <BiCategory size={22} />
       </span>
       {displayDialog && (
-        <div className=' absolute z-50  p-4 shadow-md w-52 h-64  bg-white rounded-sm'>
-          <CategoriesList categories={data} />
-        </div>
+        <ClickAway onClickAway={() => setDisplayDialog(false)}>
+          <div className=' absolute z-50  p-4 shadow-md w-52 h-64  bg-white rounded-sm'>
+            <CategoriesList categories={data} />
+          </div>
+        </ClickAway>
       )}
     </div>
   );
