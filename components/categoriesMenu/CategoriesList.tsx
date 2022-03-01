@@ -9,7 +9,7 @@ export default function CategoriesList({ categories }: IProps) {
   return (
     <div>
       <div className='list-none  '>
-        {categories.map((category) => (
+        {categories?.map((category) => (
           <li
             key={category.id}
             className='flex items-center mt-1 cursor-pointer hover:bg-lightgreyx2 p-3 '
