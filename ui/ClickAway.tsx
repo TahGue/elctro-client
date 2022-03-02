@@ -6,7 +6,11 @@ export type clickAwayType = {
   onClickAway: () => void;
 };
 
-export const ClickAway: FC<clickAwayType> = ({ className, children, onClickAway }) => {
+export const ClickAway: FC<clickAwayType> = ({
+  className,
+  children,
+  onClickAway,
+}) => {
   const ref = useRef(null);
   useEffect(() => {
     /**
@@ -15,7 +19,9 @@ export const ClickAway: FC<clickAwayType> = ({ className, children, onClickAway 
     function onHandleClick(event: MouseEvent): any {
       if (
         ref?.current &&
-        !(ref.current && ref.current !== null ? ref.current : new Node())?.contains(event?.target as Node)
+        !(
+          ref.current && ref.current !== null ? ref.current : new Node()
+        )?.contains(event?.target as Node)
       ) {
         onClickAway();
       }

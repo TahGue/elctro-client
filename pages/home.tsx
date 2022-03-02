@@ -1,7 +1,8 @@
 import React from 'react';
 import { SwiperSlide } from 'swiper/react';
 import CustomSlider from '../components/slider/CustomSlider';
-import Button from '../ui/Button';
+
+import ButtonPrimary from '../ui/button/ButtonPrimary';
 
 export default function home() {
   return (
@@ -16,9 +17,7 @@ export default function home() {
             eiusmod tempor.
           </p>
 
-          <Button color='primary' size='large' rounded='lg'>
-            Start shop
-          </Button>
+          <ButtonPrimary onClick={() => {}}>Start shop</ButtonPrimary>
         </div>
       </SwiperSlide>
 
@@ -32,9 +31,7 @@ export default function home() {
             eiusmod tempor.
           </p>
 
-          <Button color='primary' size='large' rounded='lg'>
-            Start shop
-          </Button>
+          <ButtonPrimary>Start shop</ButtonPrimary>
         </div>
       </SwiperSlide>
 
@@ -48,7 +45,7 @@ export default function home() {
             eiusmod tempor.
           </p>
 
-          <Button>Start shop</Button>
+          <ButtonPrimary>Start shop</ButtonPrimary>
         </div>
       </SwiperSlide>
     </CustomSlider>

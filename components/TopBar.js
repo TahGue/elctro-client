@@ -17,23 +17,23 @@ export default function TopBar() {
   return (
     <div className='flex justify-between items-center border-b border-lightgreyx2 py-4 '>
       <div className='text-lightgrey justify-between flex items-center w-40'>
-        <span className='hover:text-primary transition cursor-pointer'>
+        <span className='hover:text-pr transition cursor-pointer'>
           <FaInstagram size={20} />
         </span>
-        <span className='hover:text-primary transition cursor-pointer'>
+        <span className='hover:text-pr transition cursor-pointer'>
           <FaFacebookSquare size={20} />
         </span>
-        <span className='hover:text-primary transition cursor-pointer'>
+        <span className='hover:text-pr transition cursor-pointer'>
           <FaTwitter size={20} />
         </span>
-        <span className='hover:text-primary transition cursor-pointer'>
+        <span className='hover:text-pr transition cursor-pointer'>
           <FaTiktok size={20} />
         </span>
       </div>
       <div className='flex'>
         <a href={`tel:${companyTel}`}>
           <div className='flex items-center'>
-            <span className='text-primary mx-4'>
+            <span className='text-pr mx-4'>
               <FiPhone size={20} />
             </span>
             <span className='text-black'>{companyTel}</span>
@@ -41,7 +41,7 @@ export default function TopBar() {
         </a>
         <a href={`mailto:${companyEmail}`}>
           <div className='flex items-center cursor-pointer'>
-            <span className='text-primary mx-4'>
+            <span className='text-pr mx-4'>
               <GoMail size={20} />
             </span>
             <span className='text-black'>{companyEmail}</span>
