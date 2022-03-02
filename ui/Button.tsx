@@ -6,9 +6,8 @@ const sizes = {
 };
 
 const colors = {
-  primary:
-    'group bg-primary text-white group-hover:text-primary group-hover:bg-gray',
-  grey: 'bg-grey',
+  primary: 'bg-primary text-white hover:text-primary hover:bg-white',
+  grey: 'bg-white text-primary hover:text-white hover:bg-primary',
 };
 
 const roundeds = {
@@ -32,10 +31,10 @@ export default function Button({
 }: Iprops) {
   return (
     <button
-      className='bg-lightgreyx2  text-grey rounded-lg
-      cursor-pointer
-      hover:bg-primary   
-      hover:text-white transition-all py-2 px-2 m-3'
+      className={`
+       transition-all
+      ${sizes[size]} ${colors[color]} ${roundeds[rounded]}
+      `}
     >
       {children}
     </button>

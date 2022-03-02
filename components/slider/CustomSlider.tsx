@@ -9,12 +9,17 @@ import 'swiper/css/navigation';
 type Iprops = {
   children: ReactNode;
 };
-export default function CustomSlider({ children }: Iprops) {
+export default function CustomSlider({
+  children,
+  navigation = true,
+  slidesPerView = 1,
+}: Iprops) {
   return (
     <Swiper
-      navigation={true}
+      navigation={navigation}
       modules={[Pagination, Navigation]}
       className='swiper'
+      slidesPerView={slidesPerView}
     >
       {children}
     </Swiper>
