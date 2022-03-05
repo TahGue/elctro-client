@@ -21,6 +21,8 @@ type Iprops = {
   size?: keyof typeof sizes;
   color?: keyof typeof colors;
   rounded?: keyof typeof roundeds;
+  onClick: () => void;
+  type?: string;
 };
 
 export default function Button({
@@ -28,6 +30,8 @@ export default function Button({
   size = 'md',
   color = 'primary',
   rounded = 'sm',
+  onClick,
+  type = 'text',
 }: Iprops) {
   return (
     <button
@@ -35,6 +39,7 @@ export default function Button({
        transition-all
       ${sizes[size]} ${colors[color]} ${roundeds[rounded]}
       `}
+      onClick={onClick}
     >
       {children}
     </button>

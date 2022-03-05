@@ -8,7 +8,7 @@ type IProps = {
 export default function CategoriesList({ categories }: IProps) {
   return (
     <div>
-      <div className='list-none  '>
+      <div className='list-none overflow-auto  '>
         {categories?.map((category) => (
           <li
             key={category.id}

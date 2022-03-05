@@ -8,12 +8,12 @@ export default function CategoriesCarousel() {
   const { data } = useCategories();
 
   return (
-    <div className='p-2 w-full m-2'>
+    <div className='p-1 w-full m-2'>
       <h5 className=' text-black'>Category</h5>
-      <CustomSlider slidesPerView={5}>
+      <CustomSlider slidesPerView={5} navigation={false}>
         {data?.map((category: Category) => (
           <SwiperSlide key={category.id}>
-            <div className=' flex justify-center items-center border border-grey  rounded-md m-3 p-3'>
+            <div className=' flex  items-center border border-grey  rounded-md m-3 p-1'>
               <Image
                 src={category.image}
                 layout='fixed'
@@ -21,7 +21,7 @@ export default function CategoriesCarousel() {
                 height={25}
                 alt={category.name}
               />
-              <span>{category.name}</span>
+              <span className=' p-2 '>{category.name}</span>
             </div>
           </SwiperSlide>
         ))}

@@ -8,6 +8,8 @@ import 'swiper/css/navigation';
 
 type Iprops = {
   children: ReactNode;
+  navigation?: boolean;
+  slidesPerView?: number;
 };
 export default function CustomSlider({
   children,

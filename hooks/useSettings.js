@@ -5,5 +5,6 @@ export const useSettings = () => {
     companyEmail: 'info@electromobil.se',
     companyLogo: '/electroLogo.png',
     companyFavicon: '/electroLogo.png',
+    currency: 'SEK',
   };
 };

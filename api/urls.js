@@ -8,4 +8,11 @@ export const urls = {
   brand: {
     all: `${BASE_URL}/brands/`,
   },
+  product: {
+    featured: `${BASE_URL}/product/featured`,
+    latest: `${BASE_URL}/product/latest`,
+    shop: `${BASE_URL}/product/shop`,
+    getBySlug: `${BASE_URL}/product`,
+    search: `${BASE_URL}/product/search`,
+  },
 };

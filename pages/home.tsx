@@ -3,6 +3,7 @@ import { SwiperSlide } from 'swiper/react';
 import CustomSlider from '../components/slider/CustomSlider';
 import Button from '../ui/Button';
 import CategoriesCarousel from '../components/categoriesCarousel/CategoriesCarousel';
+import ProductCard from '../components/product/ProductCard';
 
 export default function home() {
   return (
@@ -18,7 +19,12 @@ export default function home() {
               eiusmod tempor.
             </p>
 
-            <Button color='primary' size='large' rounded='lg'>
+            <Button
+              onClick={() => {}}
+              color='primary'
+              size='large'
+              rounded='lg'
+            >
               Start shop
             </Button>
           </div>
@@ -34,13 +40,34 @@ export default function home() {
               eiusmod tempor.
             </p>
 
-            <Button color='primary' size='large' rounded='lg'>
+            <Button
+              onClick={() => {}}
+              color='primary'
+              size='large'
+              rounded='lg'
+            >
               Start shop
             </Button>
           </div>
         </SwiperSlide>
       </CustomSlider>
       <CategoriesCarousel />
+
+      <div>
+        <ProductCard
+          product={{
+            id: 1,
+            image: '/category.png',
+            name: 'Iphone 7',
+            is_active: true,
+            price: 200,
+            is_new: true,
+            description: '',
+            brandId: 1,
+            taxTypeId: 1,
+          }}
+        />
+      </div>
     </>
   );
 }

@@ -30,7 +30,7 @@ export default function CategoriesMenu() {
       </span>
       {displayDialog && (
         <ClickAway onClickAway={() => setDisplayDialog(false)}>
-          <div className=' absolute z-50  p-4 shadow-md w-52 h-64  bg-white rounded-sm'>
+          <div className=' absolute z-50  p-4 shadow-md w-52 h-64  bg-white rounded-sm overflow-auto'>
             <CategoriesList categories={data} />
           </div>
         </ClickAway>
