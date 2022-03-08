@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import { useSettings } from '../../hooks/useSettings';
+import Footer from '../layout/Footer';
 import TopBar from '../TopBar';
 import Header from './Header';
 
@@ -26,6 +27,8 @@ const PublicLayout: React.FC<Props> = ({ children, title }) => {
         <TopBar />
         <Header />
         {children}
+        <br />
+      <Footer/>
       </div>
     </>
   );

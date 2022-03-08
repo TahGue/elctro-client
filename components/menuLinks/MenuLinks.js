@@ -2,11 +2,13 @@ import Link from 'next/link';
 import React from 'react';
 import { useTypeSafeTranslation } from '../../hooks/useTypeSafeTranslation';
 
-export default function MenuLinks() {
+export default function MenuLinks({
+  containerClassName = 'flex justify-center',
+}) {
   const { t } = useTypeSafeTranslation();
   return (
     <div>
-      <div className='flex justify-center text-lg '>
+      <div className={` text-lg ${containerClassName}`}>
         <Link href=''>
           <span className=' p-2 m-2 text-black cursor-pointer hover:text-primary transition-all'>
             {t('home')}
