@@ -13,7 +13,7 @@ const ProductCard = ({ product }: IProps) => {
   const { currency } = useSettings();
 
   return (
-    <div className='border border-grey'>
+    <div className='relative border border-grey text-center justify-center items-center p-2'>
       <div>
         <Image src={product?.image} layout='fixed' width={200} height={200} />
       </div>
@@ -22,8 +22,8 @@ const ProductCard = ({ product }: IProps) => {
         <span>{`${product.price} ${currency}`}</span>
       </div>
       <div>
-        <span>
-          <FiHeart />
+        <span className=' absolute top-1  left-1 text-red cursor-pointer hover:animate-ping '>
+          <FiHeart size={25} />
         </span>
       </div>
       <div>

@@ -22,6 +22,7 @@ module.exports = {
       white: '#ffffff',
       blue: '#03A9F4',
       violet: '#7E57C2',
+      red: '#EF5350',
     },
 
     screens: {
