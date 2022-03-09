@@ -15,11 +15,14 @@ import BoxedIcon from '../../ui/BoxedIcon';
 
 import CategoriesMenu from '../categoriesMenu/CategoriesMenu';
 import MenuLinks from '../menuLinks/MenuLinks';
+import SubscribeForm from '../subscribe';
 
 export default function Footer() {
   const { companyName, companyEmail, companyTel } = useSettings();
   return (
-    <div className='bg-lightprimary  p-5 flex justify-between'>
+   
+   <div className='bg-lightprimary  p-5 flex justify-between'>
+     
       <div>
         <h1 className='text-primary text-3xl'>Electromobile </h1>
         <h4 className=' text-grey w-full max-w-md'>
@@ -48,7 +51,8 @@ export default function Footer() {
         <h4 className=' text-lg font-bold text-black'>Electromobil</h4>
         <MenuLinks containerClassName='flex flex-col' />
       </div>
-      <div className='flex'>
+      <div className='flex flex-col'>
+        <h4 className=' text-lg font-bold text-black items-center'>Kontakta Oss</h4>
         <a href={`tel:${companyTel}`}>
           <div className='flex items-center'>
             <span className='text-primary mx-4'>

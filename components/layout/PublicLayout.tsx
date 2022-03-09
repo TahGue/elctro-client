@@ -4,6 +4,7 @@ import { useSettings } from '../../hooks/useSettings';
 import Footer from '../layout/Footer';
 import TopBar from '../TopBar';
 import Header from './Header';
+import SubscribeForm from '../subscribe';
 
 type Props = {
   children: React.ReactNode;
@@ -28,6 +29,8 @@ const PublicLayout: React.FC<Props> = ({ children, title }) => {
         <Header />
         {children}
         <br />
+        <div className=''><SubscribeForm/></div>
+        
       <Footer/>
       </div>
     </>
