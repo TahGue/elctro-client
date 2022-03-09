@@ -23,16 +23,28 @@ interface CheckboxProps extends React.ComponentPropsWithoutRef<'input'> {
   containerClassName?: string;
 }
 
+// eslint-disable-next-line react/display-name
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ type = 'checkbox', name, label, checked = false, onChange, children, ...props }, forwardedRef) => {
+  (
+    {
+      type = 'checkbox',
+      name,
+      label,
+      checked = false,
+      onChange,
+      children,
+      ...props
+    },
+    forwardedRef
+  ) => {
     return (
-      <div className="hover:bg-gray-100 rounded-md cursor-pointer">
+      <div className='hover:bg-gray-100 rounded-md cursor-pointer'>
         <label
-          className="relative text-left flex flex-row cursor-pointer py-2 truncate text-md text-gray-700 gap-2 items-center select-none group"
+          className='relative text-left flex flex-row cursor-pointer py-2 truncate text-md text-gray-700 gap-2 items-center select-none group'
           htmlFor={name}
         >
           <input
-            className="absolute opacity-0 h-6 w-6 appearance-none cursor-pointer"
+            className='absolute opacity-0 h-6 w-6 appearance-none cursor-pointer'
             id={name}
             type={type}
             name={name}
@@ -50,7 +62,11 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
                 : 'border-2 group-hover:scale-110'
             }`}
           >
-            <Check className={`text-background ${checked ? 'opacity-100' : 'opacity-0 '}`} />
+            <Check
+              className={`text-background ${
+                checked ? 'opacity-100' : 'opacity-0 '
+              }`}
+            />
           </div>
 
           {children}
