@@ -1,67 +1,66 @@
-import React, { useState } from 'react'
-import BoxedIcon from "../ui/BoxedIcon"
-import Textfield from './textfield'
+import React, { useState } from 'react';
+import BoxedIcon from '../ui/BoxedIcon';
+import Button from '../ui/Button';
+import { Checkbox } from '../ui/Checkbox';
+import Textfield from '../ui/TextField';
+
 const ContactUsForm = () => {
-    const [email, setEmail] = useState("")
-    const [name, setName] = useState("")
-    const [Subject, setSubject] = useState("")
-  
-    const handleSubmit = async (event: React.FormEvent) => {
-      // TODO
-    }
-  
-    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const { value } = event.target
-      setEmail(value)
-    }
-  
-    const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const { value } = event.target
-      setName(value)
-    }
-    const handleSubjectChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { value } = event.target
-        setSubject(value)
-      }
-  
-    return (
-      <div className='border border-grey rounded-md p-3'><form onSubmit={handleSubmit}>
-        <div><Textfield
-         label='name'
-          name="fields[first_name]"
-          placeholder="Your first name"
-          type="text"
-          required
-          onChange={onChange}
-          value={name}
-        />
-        </div>
-        <div><Textfield
-         label='E-mail'
-          name="email_address"
-          placeholder="Your email address"
-          required
-          type="email"
-          onChange={onChange}
-          value={email}
-        />
-        </div>
-        <div className=''>
-        <Textfield 
-          label='Subject'
-          name="Subject_data"
-          placeholder="Your Subject"
-          required
-          type="text"
-          onChange={onChange}
-          value={Subject}
-        />
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [Subject, setSubject] = useState('');
+  const [isAccept, setIsAccept] = useState(false);
+  // TODO
+
+  return (
+    <div className='border border-grey rounded-md p-3'>
+      <form>
+        <div>
+          <Textfield
+            label='name'
+            name='fields[first_name]'
+            placeholder='Your first name'
+            type='text'
+            required
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
         </div>
         <div>
-        <BoxedIcon>Submit</BoxedIcon>
+          <Textfield
+            label='E-mail'
+            name='email_address'
+            placeholder='Your email address'
+            required
+            type='email'
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+        </div>
+        <div className=''>
+          <Textfield
+            label='Subject'
+            name='Subject_data'
+            placeholder='Your Subject'
+            required
+            type='text'
+            onChange={(e) => setSubject(e.target.value)}
+            value={Subject}
+          />
+        </div>
+        <div className='flex w-full justify-between items-center'>
+          <Checkbox
+            name='isAccept'
+            checked={isAccept}
+            onChange={(e) => setIsAccept(!isAccept)}
+            label='Accept Terms & Condition'
+            color='primary'
+          />
+          <div>
+            <Button size='large'>Submit</Button>
+          </div>
         </div>
       </form>
-      </div>
-    )
-  }
-  export default ContactUsForm
+    </div>
+  );
+};
+export default ContactUsForm;

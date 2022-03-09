@@ -37,7 +37,6 @@ export default function Button({
     <button
       className={`
        transition-all
-       hover:animate-ping 
       ${sizes[size]} ${colors[color]} ${roundeds[rounded]}
       `}
       onClick={onClick}

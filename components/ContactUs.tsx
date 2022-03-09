@@ -15,10 +15,11 @@ import { useSettings } from '../hooks/useSettings';
 export default function ContactUs() {
   const { companyName, companyEmail, companyTel } = useSettings();
   return (
-    
-     <div className='border border-grey rounded-md p-3'>
+    <div className='border border-grey rounded-md p-3 h-full'>
       <div className='flex flex-col'>
-        <h4 className=' text-lg font-bold text-black items-center'>Kontakta Oss</h4>
+        <h4 className=' text-lg font-bold text-black items-center'>
+          Kontakta Oss
+        </h4>
         <a href={`tel:${companyTel}`}>
           <div className='flex items-center'>
             <span className='text-primary mx-4'>
