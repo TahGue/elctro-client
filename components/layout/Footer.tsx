@@ -14,8 +14,9 @@ import { useSettings } from '../../hooks/useSettings';
 import BoxedIcon from '../../ui/BoxedIcon';
 
 import CategoriesMenu from '../categoriesMenu/CategoriesMenu';
+import FollowUs from '../FollowUs';
 import MenuLinks from '../menuLinks/MenuLinks';
-import SubscribeForm from '../subscribe';
+import SubscribeForm from './Subscribe';
 
 export default function Footer() {
   const { companyName, companyEmail, companyTel } = useSettings();
@@ -31,20 +32,7 @@ export default function Footer() {
           tillbaka den.Det är precis det våra tekniker gör.
         </h4>
         <div className='flex border-b border-lightgreyx2 py-4 '>
-          <ul className='text-primary justify-around flex items-center mt-2'>
-            <BoxedIcon>
-              <FaInstagram size={33} />
-            </BoxedIcon>
-            <BoxedIcon>
-              <FaFacebookSquare size={33} />
-            </BoxedIcon>
-            <BoxedIcon>
-              <FaTwitter size={33} />
-            </BoxedIcon>
-            <BoxedIcon>
-              <FaTiktok size={33} />
-            </BoxedIcon>
-          </ul>
+          <FollowUs />
         </div>
       </div>
       <div>

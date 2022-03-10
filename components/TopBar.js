@@ -11,24 +11,14 @@ import { FiPhone } from 'react-icons/fi';
 import { GoMail } from 'react-icons/go';
 
 import { useSettings } from '../hooks/useSettings';
+import FollowUs from './FollowUs';
 
 export default function TopBar() {
   const { companyName, companyEmail, companyTel } = useSettings();
   return (
     <div className='flex justify-between items-center border-b border-lightgreyx2 py-4 '>
       <div className='text-lightgrey justify-between flex items-center w-40'>
-        <span className='hover:text-primary transition cursor-pointer'>
-          <FaInstagram size={20} />
-        </span>
-        <span className='hover:text-primary transition cursor-pointer'>
-          <FaFacebookSquare size={20} />
-        </span>
-        <span className='hover:text-primary transition cursor-pointer'>
-          <FaTwitter size={20} />
-        </span>
-        <span className='hover:text-primary transition cursor-pointer'>
-          <FaTiktok size={20} />
-        </span>
+        <FollowUs/>
       </div>
       <div className='flex'>
         <a href={`tel:${companyTel}`}>

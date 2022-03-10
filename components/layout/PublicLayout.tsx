@@ -4,7 +4,7 @@ import { useSettings } from '../../hooks/useSettings';
 import Footer from '../layout/Footer';
 import TopBar from '../TopBar';
 import Header from './Header';
-import SubscribeForm from '../subscribe';
+import SubscribeForm from '../Subscribe';
 
 type Props = {
   children: React.ReactNode;

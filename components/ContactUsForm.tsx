@@ -47,8 +47,8 @@ const ContactUsForm = () => {
             value={Subject}
           />
         </div>
-        <div className='flex w-full justify-between items-center'>
-          <Checkbox
+        <div className='flex w-full justify-between items-center '>
+          <Checkbox 
             name='isAccept'
             checked={isAccept}
             onChange={(e) => setIsAccept(!isAccept)}

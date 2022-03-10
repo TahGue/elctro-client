@@ -8,7 +8,7 @@ const BoxedIcon = ({ children }: Iprops) => {
     <li
       className={`
               bg-primary text-white hover:text-primary hover:bg-white
-             transition cursor-pointer w-14 h-14 rounded-md
+             transition cursor-pointer w-8 h-8 rounded-md
               flex justify-center items-center
                m-1 
              `}
