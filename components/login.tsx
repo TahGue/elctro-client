@@ -28,6 +28,7 @@ export default function Login() {
                           layout="fixed"
                           width={30}
                           height={30}
+                          
                         />
                         <span className="text-white ml-1 ">Github</span>
                       </button>
