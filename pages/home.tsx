@@ -5,7 +5,6 @@ import Button from "../ui/Button";
 import CategoriesCarousel from "../components/categoriesCarousel/CategoriesCarousel";
 import ProductCard from "../components/product/ProductCard";
 import ProductCard2 from "../components/product/ProductCard2";
-import Login from "../components/login";
 
 export default function home() {
   return (
@@ -86,8 +85,6 @@ export default function home() {
             taxTypeId: 1,
           }}
         />
-
-        <Login />
       </div>
     </>
   );
