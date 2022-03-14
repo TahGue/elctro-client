@@ -34,6 +34,7 @@ export default function Login() {
                           layout="fixed"
                           width={30}
                           height={30}
+                          alt="github"
                         />
                         <span className="text-white ml-1 ">Github</span>
                       </button>
@@ -48,6 +49,7 @@ export default function Login() {
                           layout="fixed"
                           width={30}
                           height={30}
+                          alt="google"
                         />
                         <span className="text-white ml-1 ">Google</span>
                       </button>

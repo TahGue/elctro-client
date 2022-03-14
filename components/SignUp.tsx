@@ -24,7 +24,7 @@ export default function SignUp() {
                   <div className="rounded-t mb-0 px-6 py-6">
                     <form>
                       <div className="">
-                        <div className="  inline-block p-2  w-1/2">
+                        <div className="  inline-block p-2  lg:w-1/2 md:w-full sm:w-full ">
                           <div>
                             <Textfield
                               label=" First Name"
@@ -70,7 +70,7 @@ export default function SignUp() {
                             />
                           </div>
                         </div>
-                        <div className=" inline-block p-2 w-1/2">
+                        <div className=" inline-block p-2 w-1/2 lg:w-1/2 md:w-full sm:w-full">
                           <div>
                             <Textfield
                               label="Email"
