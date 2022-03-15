@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
+import Link from "next/link";
 export default function pageNotFound() {
   return (
     <div className="  flex  justify-center items-center h-screen">
@@ -25,7 +26,9 @@ export default function pageNotFound() {
           </h3>
         </div>
         <div className="m-4 ">
-          <Button size="large">Back To Home</Button>
+          <Link href="/">
+            <Button size="large">Back To Home</Button>
+          </Link>
         </div>
       </div>
     </div>
