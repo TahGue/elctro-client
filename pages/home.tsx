@@ -5,6 +5,7 @@ import Button from "../ui/Button";
 import CategoriesCarousel from "../components/categoriesCarousel/CategoriesCarousel";
 import ProductCard from "../components/product/ProductCard";
 import ProductCard2 from "../components/product/ProductCard2";
+import BrandsCarousel from "../components/brandsCarousel/BrandsCarousel";
 
 export default function home() {
   return (
@@ -53,6 +54,8 @@ export default function home() {
         </SwiperSlide>
       </CustomSlider>
       <CategoriesCarousel />
+
+      <BrandsCarousel />
 
       <div>
         <ProductCard
