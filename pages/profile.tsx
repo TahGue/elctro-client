@@ -4,12 +4,12 @@ import { Checkbox } from '../ui/Checkbox';
 import Textfield from '../ui/TextField';
 
 
-    const profile = () => {
+    const Profile = () => {
         
-        const [firstname, setFirstName] = useState('');
-        const [lastname, setLastName] = useState('');
-        const [email, setEmail] = useState('');
-        const [phone, setPhone] = useState('');
+        const [firstname, setFirstName] = useState<string>('');
+        const [lastname, setLastName] = useState<string>('');
+        const [email, setEmail] = useState<string>('');
+        const [phone, setPhone] = useState<string>('');
         
         return (
           <div className='flex border border-grey rounded-md p-3'>
@@ -76,4 +76,4 @@ import Textfield from '../ui/TextField';
       };
   
 
-export default profile
+export default Profile

@@ -78,10 +78,10 @@ export default function Footer() {
       
      
     </div>
-<div className=' '>
-  <h5 className='border-t border-x-lightgrey'>copyright © 2022 ElectroMobil. All Right Reserved</h5>
-  <div className='   '>
-          <ul className='text-primary justify-around flex items-center mt-2'>
+<div className='flex items-center justify-between border-t border-x-lightgrey '>
+  <h5 className=''>copyright © 2022 ElectroMobil. All Right Reserved</h5>
+  <div className=' justify-end  '>
+          <ul className='text-primary justify-end flex items-center '>
           <PaymentIcons>
               <RiMastercardLine size={22} />
             </PaymentIcons>
