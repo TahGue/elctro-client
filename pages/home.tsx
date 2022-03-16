@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 import CategoriesCarousel from "../components/categoriesCarousel/CategoriesCarousel";
 import ProductCard from "../components/product/ProductCard";
 import ProductCard2 from "../components/product/ProductCard2";
-import Login from "../components/login";
+import BrandsCarousel from "../components/brandsCarousel/BrandsCarousel";
 
 export default function home() {
   return (
@@ -55,6 +55,8 @@ export default function home() {
       </CustomSlider>
       <CategoriesCarousel />
 
+      <BrandsCarousel />
+
       <div>
         <ProductCard
           product={{
@@ -86,8 +88,6 @@ export default function home() {
             taxTypeId: 1,
           }}
         />
-
-        <Login />
       </div>
     </>
   );
