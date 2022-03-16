@@ -9,10 +9,10 @@ export const urls = {
     all: `${BASE_URL}/brands/`,
   },
   product: {
-    featured: `${BASE_URL}/product/featured`,
-    latest: `${BASE_URL}/product/latest`,
-    shop: `${BASE_URL}/product/shop`,
-    getBySlug: `${BASE_URL}/product`,
-    search: `${BASE_URL}/product/search`,
+    featured: `${BASE_URL}/products/featured`,
+    latest: `${BASE_URL}/products/latest`,
+    shop: `${BASE_URL}/products/shop`,
+    getBySlug: `${BASE_URL}/products/slug`,
+    search: `${BASE_URL}/products/search`,
   },
 };
