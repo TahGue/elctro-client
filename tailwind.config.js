@@ -95,11 +95,6 @@ module.exports = {
         '1/2': '50%',
         '1/4': '25%',
       },
-      margin: {
-        full: '100%',
-        '1/2': '50%',
-        '1/4': '25%',
-      },
       borderRadius: {
         5: '5px',
         8: '8px',
@@ -178,35 +173,6 @@ module.exports = {
       },
     },
   },
-  variants: {
-    scrollbar: ['rounded'],
-    transitionProperty: ['responsive', 'motion-safe', 'motion-reduce'],
-    extend: {
-      backgroundColor: [
-        'responsive',
-        'hover',
-        'focus',
-        'active',
-        'checked',
-        'disabled',
-      ],
-      borderColor: [
-        'responsive',
-        'hover',
-        'focus',
-        'active',
-        'focus-within',
-        'checked',
-        'disabled',
-      ],
-      boxShadow: ['responsive', 'hover', 'focus', 'active', 'disabled'],
-      textColor: ['responsive', 'hover', 'focus', 'active', 'disabled'],
-      textDecoration: ['responsive', 'hover', 'focus', 'active', 'disabled'],
-      scale: ['group-hover'],
-      cursor: ['disabled'],
-    },
-  },
-  plugins: [],
 
-  extend: {},
+  plugins: [],
 };

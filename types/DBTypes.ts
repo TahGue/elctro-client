@@ -6,6 +6,14 @@ export type Category = {
   created_at: Date;
 };
 
+export type Brand = {
+  id: number;
+  name: string;
+  image: string;
+  is_active: boolean;
+  created_at: Date;
+};
+
 export type Product = {
   id: number;
   name: string;

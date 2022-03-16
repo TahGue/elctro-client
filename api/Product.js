@@ -1,12 +1,12 @@
-import axiosInstance from './axiosinstance';
+import axios from 'axios';
 import { urls } from './urls';
 
 class Product {
   static getFeatured() {
-    return axiosInstance.get(urls.product.featured).then((res) => res.data);
+    return axios.get(urls.product.featured).then((res) => res.data);
   }
   static getLatest(limit) {
-    return axiosInstance.get(urls.product.latest).then((res) => res.data, {
+    return axios.get(urls.product.latest).then((res) => res.data, {
       params: {
         limit,
       },
@@ -14,7 +14,7 @@ class Product {
   }
 
   static getBySlug(slug) {
-    return axiosInstance
+    return axios
       .get(urls.product.getBySlug, {
         params: {
           slug,
@@ -23,19 +23,11 @@ class Product {
       .then((res) => res.data);
   }
 
-  static async getShop({
-    categories,
-    brands,
-    tags,
-    searchText,
-    priceRange,
-    page,
-  }) {
-    return axiosInstance
+  static async getShop({ categories, brands, searchText, priceRange, page }) {
+    return axios
       .post(urls.product.shop, {
         categories,
         brands,
-        tags,
         searchText,
         priceRange,
         page,
@@ -44,7 +36,7 @@ class Product {
   }
 
   static search(name) {
-    return axiosInstance
+    return axios
       .get(urls.product.search, {
         params: {
           name,
