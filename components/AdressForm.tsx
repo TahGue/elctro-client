@@ -8,7 +8,7 @@ const ContactUsForm = () => {
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
   const [street, setStreet] = useState('');
-  const [streetnr, setStreetNr] = useState('');
+  const [homenr, setHomeNr] = useState('');
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const [zipcode, setZipCode] = useState('');
@@ -52,13 +52,13 @@ const ContactUsForm = () => {
         </div>
         <div>
           <Textfield
-            label='StreetNr'
-            name='streetnr'
-            placeholder='Your street number'
+            label='HomeNr'
+            name='homenr'
+            placeholder='Your home number'
             required
             type='text'
-            onChange={(e) => setStreetNr(e.target.value)}
-            value={streetnr}
+            onChange={(e) => setHomeNr(e.target.value)}
+            value={homenr}
           />
         </div>
         <div className=''>
