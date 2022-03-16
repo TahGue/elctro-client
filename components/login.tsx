@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import Textfield from "../ui/TextField";
+import Button from "../ui/Button";
+import { Checkbox } from "../ui/Checkbox";
 
 export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isAccept, setIsAccept] = useState(false);
   return (
     <>
       <main>
-        <section className="absolute w-full h-full ">
+        <section className=" w-full h-full ">
           <div className="container mx-auto px-4  w-full h-full">
             <div className="flex content-center items-center justify-center h-full">
               <div className="w-full lg:w-full sm:w-full px-4">
@@ -28,6 +34,7 @@ export default function Login() {
                           layout="fixed"
                           width={30}
                           height={30}
+                          alt="github"
                         />
                         <span className="text-white ml-1 ">Github</span>
                       </button>
@@ -42,73 +49,62 @@ export default function Login() {
                           layout="fixed"
                           width={30}
                           height={30}
+                          alt="google"
                         />
                         <span className="text-white ml-1 ">Google</span>
                       </button>
                     </div>
-                    <hr className="mt-6 border-b-1 border-grey " />
+                    <hr className="mt-6 border-b-1 border-grey" />
                   </div>
                   <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
                     <div className="text-grey text-center mb-3 font-bold">
                       <small>Or sign in with credentials</small>
                     </div>
                     <form>
-                      <div className="relative w-full mb-3">
-                        <label
-                          className="block uppercase text-black text-xs font-bold mb-2"
-                          htmlFor="grid-password"
-                        >
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          className="border border-grey px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                          placeholder="Email"
-                          style={{ transition: "all .15s ease" }}
+                      <div>
+                        <Textfield
+                          label="Email"
+                          name="fields[Email]"
+                          placeholder="Your Email"
+                          type="text"
+                          required
+                          onChange={(e) => setEmail(e.target.value)}
+                          value={email}
+                        />
+                      </div>
+                      <div>
+                        <Textfield
+                          label="Pasdword"
+                          name="fields[Pasdword]"
+                          placeholder="Pasdword"
+                          type="text"
+                          required
+                          onChange={(e) => setPassword(e.target.value)}
+                          value={password}
                         />
                       </div>
 
-                      <div className="relative w-full mb-3">
-                        <label
-                          className="block uppercase text-gray-700 text-xs font-bold mb-2"
-                          htmlFor="grid-password"
-                        >
-                          Password
-                        </label>
-                        <input
-                          type="password"
-                          className="border border-grey px-3 py-3 placeholder-grey text-grey-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                          placeholder="Password"
-                          style={{ transition: "all .15s ease" }}
-                        />
-                      </div>
                       <div className="flex justify-between">
-                        <label className="inline-flex items-center cursor-pointer">
-                          <input
-                            id="customCheckLogin"
-                            type="checkbox"
-                            className="form-checkbox border-0 rounded  ml-1 w-3 h-3"
-                            style={{ transition: "all .15s ease" }}
+                        <div className="flex  justify-between items-center">
+                          <Checkbox
+                            name="isAccept"
+                            checked={isAccept}
+                            onChange={(e) => setIsAccept(!isAccept)}
+                            label=" Remember me"
+                            color="primary"
                           />
-                          <span className="ml-2 text-xs font-semibold text-gray-700">
-                            Remember me
-                          </span>
-                        </label>
+                        </div>
+
                         <div className="">
                           <a href="#pablo" className="text-primary">
                             <small>Forgot password?</small>
                           </a>
                         </div>
                       </div>
-
-                      <div className="text-center mt-6">
-                        <button
-                          className="bg-primary text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                          type="button"
-                          style={{ transition: "all .15s ease" }}
-                        >
+                      <div>
+                        <Button size="xLarge" width="full">
                           Sign In
-                        </button>
+                        </Button>
                       </div>
                     </form>
                     <div className="text-center mt-2 ">

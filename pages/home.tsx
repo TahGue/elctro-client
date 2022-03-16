@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { SwiperSlide } from 'swiper/react';
 import CustomSlider from '../components/slider/CustomSlider';
@@ -6,6 +7,16 @@ import CategoriesCarousel from '../components/categoriesCarousel/CategoriesCarou
 import ProductCard from '../components/product/ProductCard';
 import ProductCard2 from '../components/product/ProductCard2';
 import Login from '../components/login';
+=======
+import React from "react";
+import { SwiperSlide } from "swiper/react";
+import CustomSlider from "../components/slider/CustomSlider";
+import Button from "../ui/Button";
+import CategoriesCarousel from "../components/categoriesCarousel/CategoriesCarousel";
+import ProductCard from "../components/product/ProductCard";
+import ProductCard2 from "../components/product/ProductCard2";
+import BrandsCarousel from "../components/brandsCarousel/BrandsCarousel";
+>>>>>>> a73ea89320a93fed902f74c83390c3df4e784a36
 
 export default function home() {
   return (
@@ -54,6 +65,8 @@ export default function home() {
         </SwiperSlide>
       </CustomSlider>
       <CategoriesCarousel />
+
+      <BrandsCarousel />
 
       <div>
         <ProductCard
