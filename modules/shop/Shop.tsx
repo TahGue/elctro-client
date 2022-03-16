@@ -83,9 +83,10 @@ export default function Shop() {
             </div>
           </Col>
           <Col sm={12} lg={9} md={9}>
+            {isLoading && <h1>Loading ...</h1>}
             <Container>
               <Row>
-                {data?.products?.map((pro: Product) => (
+                {data?.map((pro: Product) => (
                   <Col key={pro.id} lg={4} md={4} sm={12}>
                     <div className=' p-2'>
                       <ProductCard product={pro} key={pro.id} />
