@@ -9,40 +9,42 @@ import {
 } from 'react-icons/fa';
 import { FiPhone } from 'react-icons/fi';
 import { GoMail } from 'react-icons/go';
+import { RiMastercardLine, RiPaypalLine, RiVisaFill } from 'react-icons/ri';
 
 import { useSettings } from '../../hooks/useSettings';
 import BoxedIcon from '../../ui/BoxedIcon';
 
 import CategoriesMenu from '../categoriesMenu/CategoriesMenu';
 import MenuLinks from '../menuLinks/MenuLinks';
+import PaymentIcons from '../../ui/PaymentIcons';
 import SubscribeForm from '../subscribe';
 
 export default function Footer() {
   const { companyName, companyEmail, companyTel } = useSettings();
   return (
    
-   <div className='bg-lightprimary  p-5 flex justify-between'>
-     
-      <div>
+   <div className='bg-lightprimary  p-5  '>
+     <div className='flex justify-between '>
+      <div className=''>
         <h1 className='text-primary text-3xl'>Electromobile </h1>
         <h4 className=' text-grey w-full max-w-md'>
           Professionella Tekniker Det är väldigt viktigt för oss att din process
           sker professionellt. Från att du lämnar in din telefon till att du får
           tillbaka den.Det är precis det våra tekniker gör.
         </h4>
-        <div className='flex border-b border-lightgreyx2 py-4 '>
+        <div className='flex   py-4 '>
           <ul className='text-primary justify-around flex items-center mt-2'>
             <BoxedIcon>
-              <FaInstagram size={33} />
+              <FaInstagram size={22} />
             </BoxedIcon>
             <BoxedIcon>
-              <FaFacebookSquare size={33} />
+              <FaFacebookSquare size={22} />
             </BoxedIcon>
             <BoxedIcon>
-              <FaTwitter size={33} />
+              <FaTwitter size={22} />
             </BoxedIcon>
             <BoxedIcon>
-              <FaTiktok size={33} />
+              <FaTiktok size={22} />
             </BoxedIcon>
           </ul>
         </div>
@@ -70,8 +72,33 @@ export default function Footer() {
           </div>
         </a>
       </div>
+     
 
-      <div></div>
+      
+      
+     
     </div>
+<div className='flex items-center justify-between border-t border-x-lightgrey '>
+  <h5 className=''>copyright © 2022 ElectroMobil. All Right Reserved</h5>
+  <div className=' justify-end  '>
+          <ul className='text-primary justify-end flex items-center '>
+          <PaymentIcons>
+              <RiMastercardLine size={22} />
+            </PaymentIcons>
+            <PaymentIcons>
+              <RiVisaFill size={22} />
+            </PaymentIcons>
+            <PaymentIcons>
+              <RiPaypalLine size={22} />
+            </PaymentIcons>
+            
+           
+          </ul>
+        </div>
+</div>
+    
+     </div>
+     
+     
   );
 }

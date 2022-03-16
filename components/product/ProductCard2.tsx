@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { AiFillHeart } from "react-icons/Ai";
+import { AiFillHeart } from "react-icons/ai";
 import { useSettings } from "../../hooks/useSettings";
 import { Product as ProductType } from "../../types/DBTypes";
 import Button from "../../ui/Button";
