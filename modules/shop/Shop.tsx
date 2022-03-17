@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-grid-system';
 import BrandsList from '../../components/brandsList/BrandsList';
 import CategoriesList from '../../components/categoriesList/CategoriesList';
+import CircleLoader from '../../components/loaders/CircleLoader';
 import Paginator from '../../components/paginator/Paginator';
 import PriceRange from '../../components/priceRange/PriceRange';
 import ProductCard from '../../components/product/ProductCard';
@@ -45,71 +46,74 @@ export default function Shop() {
   };
 
   return (
-    <div>
-      <Container>
-        <Row>
-          <Col
-            sm={12}
-            lg={3}
-            md={3}
-            className='border rounded-md border-lightgreyx2'
-          >
-            <div className='flex p-2 w-full h-12'>
-              <SearchBar
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-              />
-            </div>
-            <div className='mt-2 p-2  max-h-44 overflow-auto  border-t border-lightgreyx2 rounded-sm '>
-              <Collapse title='Categories'>
-                <CategoriesList
-                  onSelect={onSelectCategory}
-                  selectedCategories={selectedCategories}
+    <div className='h-screen'>
+      {isLoading && <CircleLoader />}
+      {!isLoading && data && (
+        <Container>
+          <Row>
+            <Col
+              sm={12}
+              lg={3}
+              md={3}
+              className='border rounded-md border-lightgreyx2'
+            >
+              <div className='flex p-2 w-full h-12'>
+                <SearchBar
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
                 />
-              </Collapse>
-            </div>
-            <div className='mt-2 p-2 rounded-sm border-t border-lightgreyx2'>
-              <Collapse title='Brands'>
-                <BrandsList
-                  onSelect={onSelectBrand}
-                  selectedBrands={selectedBrands}
-                />
-              </Collapse>
-            </div>
-
-            <div className='mt-2 p-2  border-t border-lightgreyx2'>
-              <Collapse title='Filter by price'>
-                <PriceRange value={priceRange} onChange={setPriceRange} />
-              </Collapse>
-            </div>
-          </Col>
-          <Col sm={12} lg={9} md={9}>
-            {isLoading ? (
-              <h1>Loading ...</h1>
-            ) : (
-              <Container>
-                <Row>
-                  {data?.products?.map((pro: Product) => (
-                    <Col key={pro.id} lg={4} md={4} sm={12}>
-                      <div className=' p-2'>
-                        <ProductCard product={pro} key={pro.id} />
-                      </div>
-                    </Col>
-                  ))}
-                </Row>
-                <Row>
-                  <Paginator
-                    totalItems={data?.totalCount}
-                    perPage={21}
-                    onSelectPage={(p) => setPage(p)}
-                    currentPage={page}
+              </div>
+              <div className='mt-2 p-2  max-h-44 overflow-auto  border-t border-lightgreyx2 rounded-sm '>
+                <Collapse title='Categories'>
+                  <CategoriesList
+                    onSelect={onSelectCategory}
+                    selectedCategories={selectedCategories}
                   />
-                </Row>
-              </Container>
-            )}
-          </Col>
-        </Row>
-      </Container>
+                </Collapse>
+              </div>
+              <div className='mt-2 p-2 rounded-sm border-t border-lightgreyx2'>
+                <Collapse title='Brands'>
+                  <BrandsList
+                    onSelect={onSelectBrand}
+                    selectedBrands={selectedBrands}
+                  />
+                </Collapse>
+              </div>
+
+              <div className='mt-2 p-2  border-t border-lightgreyx2'>
+                <Collapse title='Filter by price'>
+                  <PriceRange value={priceRange} onChange={setPriceRange} />
+                </Collapse>
+              </div>
+            </Col>
+            <Col sm={12} lg={9} md={9}>
+              {isLoading ? (
+                <h1>Loading ...</h1>
+              ) : (
+                <Container>
+                  <Row>
+                    {data?.products?.map((pro: Product) => (
+                      <Col key={pro.id} lg={4} md={4} sm={12}>
+                        <div className=' p-2'>
+                          <ProductCard product={pro} key={pro.id} />
+                        </div>
+                      </Col>
+                    ))}
+                  </Row>
+                  <Row>
+                    <Paginator
+                      totalItems={data?.totalCount}
+                      perPage={21}
+                      onSelectPage={(p) => setPage(p)}
+                      currentPage={page}
+                    />
+                  </Row>
+                </Container>
+              )}
+            </Col>
+          </Row>
+        </Container>
+      )}
     </div>
   );
 }

@@ -8,11 +8,7 @@ class Category {
 
   static async getBySlug(slug) {
     return axios
-      .get(urls.category.bySlug, {
-        params: {
-          slug,
-        },
-      })
+      .get(`${urls.category.bySlug}/${slug}`)
       .then((result) => result.data);
   }
 }

@@ -8,7 +8,7 @@ export const urls = {
   },
   brand: {
     all: `${BASE_URL}/brands/`,
-    bySlug: `${BASE_URL}/brand/slug`,
+    bySlug: `${BASE_URL}/brands/slug`,
   },
   product: {
     featured: `${BASE_URL}/products/featured`,
