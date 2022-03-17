@@ -4,9 +4,11 @@ export const urls = {
   category: {
     all: `${BASE_URL}/categories/`,
     details: `${BASE_URL}/categories/`,
+    bySlug: `${BASE_URL}/categories/slug`,
   },
   brand: {
     all: `${BASE_URL}/brands/`,
+    bySlug: `${BASE_URL}/brand/slug`,
   },
   product: {
     featured: `${BASE_URL}/products/featured`,

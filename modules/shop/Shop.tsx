@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-grid-system';
 import BrandsList from '../../components/brandsList/BrandsList';
 import CategoriesList from '../../components/categoriesList/CategoriesList';
+import Paginator from '../../components/paginator/Paginator';
 import PriceRange from '../../components/priceRange/PriceRange';
 import ProductCard from '../../components/product/ProductCard';
 import SearchBar from '../../components/searchBar/SearchBar';
@@ -59,7 +60,7 @@ export default function Shop() {
                 onChange={(e) => setSearchText(e.target.value)}
               />
             </div>
-            <div className='mt-2 p-2  max-h-44 overflow-auto border-t-2 rounded-sm '>
+            <div className='mt-2 p-2  max-h-44 overflow-auto  border-t border-lightgreyx2 rounded-sm '>
               <Collapse title='Categories'>
                 <CategoriesList
                   onSelect={onSelectCategory}
@@ -67,7 +68,7 @@ export default function Shop() {
                 />
               </Collapse>
             </div>
-            <div className='mt-2 p-2 rounded-sm border-t'>
+            <div className='mt-2 p-2 rounded-sm border-t border-lightgreyx2'>
               <Collapse title='Brands'>
                 <BrandsList
                   onSelect={onSelectBrand}
@@ -76,26 +77,36 @@ export default function Shop() {
               </Collapse>
             </div>
 
-            <div className='mt-2 p-2'>
+            <div className='mt-2 p-2  border-t border-lightgreyx2'>
               <Collapse title='Filter by price'>
                 <PriceRange value={priceRange} onChange={setPriceRange} />
               </Collapse>
             </div>
           </Col>
           <Col sm={12} lg={9} md={9}>
-            {isLoading && <h1>Loading ...</h1>}
-            <Container>
-              <Row>
-                {data?.map((pro: Product) => (
-                  <Col key={pro.id} lg={4} md={4} sm={12}>
-                    <div className=' p-2'>
-                      <ProductCard product={pro} key={pro.id} />
-                    </div>
-                  </Col>
-                ))}
-              </Row>
-              <Row></Row>
-            </Container>
+            {isLoading ? (
+              <h1>Loading ...</h1>
+            ) : (
+              <Container>
+                <Row>
+                  {data?.products?.map((pro: Product) => (
+                    <Col key={pro.id} lg={4} md={4} sm={12}>
+                      <div className=' p-2'>
+                        <ProductCard product={pro} key={pro.id} />
+                      </div>
+                    </Col>
+                  ))}
+                </Row>
+                <Row>
+                  <Paginator
+                    totalItems={data?.totalCount}
+                    perPage={21}
+                    onSelectPage={(p) => setPage(p)}
+                    currentPage={page}
+                  />
+                </Row>
+              </Container>
+            )}
           </Col>
         </Row>
       </Container>
