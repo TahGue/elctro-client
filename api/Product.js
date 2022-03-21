@@ -14,13 +14,10 @@ class Product {
   }
 
   static getBySlug(slug) {
+    console.log(slug);
     return axios
-      .get(urls.product.getBySlug, {
-        params: {
-          slug,
-        },
-      })
-      .then((res) => res.data);
+      .get(`${urls.product.getBySlug}/${slug}`)
+      .then((result) => result.data);
   }
 
   static async getShop({ categories, brands, searchText, priceRange, page }) {
