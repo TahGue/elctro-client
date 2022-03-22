@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Col, Container, Row } from "react-grid-system";
 import { Product } from "../../types/DBTypes";
@@ -12,11 +12,18 @@ import { FaCarSide } from "react-icons/fa";
 
 export default function ProductDetils() {
   const router = useRouter();
+  const [count, setCount] = useState(1);
 
   const { slug } = router.query;
   const { currency } = useSettings();
 
   const { data, isError, isLoading } = useProduct({ slug });
+
+  const changeCount = (val) => {
+    if (val > 0) {
+      setCount(val);
+    }
+  };
 
   return (
     <div className="h-screen">
@@ -71,8 +78,33 @@ export default function ProductDetils() {
                   <div className="mt-5 mb-5  text-sm">
                     <p>{data.description}</p>
                   </div>
-
                   <div>
+                    <div className="flex justify-center mb-3">
+                      <Button
+                        onClick={() => {
+                          changeCount(count - 1);
+                        }}
+                      >
+                        -
+                      </Button>
+                      <span className="mx-2 ">
+                        <input
+                          className=" h-full  focus:border-grey text-center"
+                          value={count}
+                          onChange={(e) =>
+                            changeCount(parseInt(e.target.value) || 1)
+                          }
+                        ></input>
+                      </span>
+                      <Button
+                        onClick={() => {
+                          changeCount(count + 1);
+                        }}
+                      >
+                        +
+                      </Button>
+                    </div>
+
                     <Button onClick={() => {}}>Add to cart</Button>
                   </div>
                 </Col>
