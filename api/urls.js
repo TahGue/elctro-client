@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:8083/rest';
+export const BASE_URL = 'http://127.0.0.1:8083/rest';
 
 export const urls = {
   category: {
@@ -8,7 +8,7 @@ export const urls = {
   },
   brand: {
     all: `${BASE_URL}/brands/`,
-    bySlug: `${BASE_URL}/brand/slug`,
+    bySlug: `${BASE_URL}/brands/slug`,
   },
   product: {
     featured: `${BASE_URL}/products/featured`,

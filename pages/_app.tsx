@@ -1,21 +1,27 @@
-import { appWithTranslation } from "next-i18next";
-import "../styles/index.css";
-import type { AppProps } from "next/app";
-import PublicLayout from "../components/layout/PublicLayout";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import nextI18NextConfig from "../next-i18next.config";
-
+import { appWithTranslation } from 'next-i18next';
+import '../styles/index.css';
+import type { AppProps } from 'next/app';
+import PublicLayout from '../components/layout/PublicLayout';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import nextI18NextConfig from '../next-i18next.config';
+import { StateContext, StateProvider } from '../providers/StateContext';
+import { initialState, reducer } from '../providers/mainReducer';
+import LocalStorageLoader from '../providers/LocalStorageLoader';
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <PublicLayout>
-        <Component {...pageProps} />
-      </PublicLayout>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <QueryClientProvider client={queryClient}>
+        <LocalStorageLoader>
+          <PublicLayout>
+            <Component {...pageProps} />
+          </PublicLayout>
+        </LocalStorageLoader>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </StateProvider>
   );
 }
 

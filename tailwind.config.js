@@ -16,6 +16,7 @@ module.exports = {
       grey: '#C4C4C4',
       lightgrey: '#A7A7A7',
       lightgreyx2: '#f0f0f0',
+      transparentGray: '#C4C4C480',
       primary: '#F46B5B',
       black: '#383838',
       lightprimary: '#F46B5B20',
@@ -162,6 +163,17 @@ module.exports = {
             transform: 'translateY(10px)',
           },
         },
+
+        spin: {
+          from: {
+            transform: 'rotate(0)',
+            opacity: '0.1',
+          },
+          to: {
+            transform: 'rotate(360deg)',
+            opacity: '1',
+          },
+        },
       },
       animation: {
         'fade-in': 'fade-in 0.35s ease-in-out',
@@ -170,6 +182,7 @@ module.exports = {
         'fade-out-down': 'fade-out-down 0.3s',
         'fade-in-up': 'fade-in-up 0.3s',
         'fade-out-up': 'fade-out-up 0.3s',
+        'spin-animate': 'spin 0.65s',
       },
     },
   },
