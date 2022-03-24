@@ -60,40 +60,6 @@ export default function home() {
 
       <BrandsCarousel />
 
-      <div>
-        <ProductCard
-          product={{
-            id: 1,
-            image: '/category.png',
-            name: 'Iphone 7',
-            is_active: true,
-            price: 200,
-            is_new: true,
-            description: '',
-            brandId: 1,
-            taxTypeId: 1,
-          }}
-        />
-      </div>
-
-      <div>
-        <ProductCard2
-          product={{
-            id: 1,
-            image: '/category.png',
-            name: 'Iphone 7',
-            is_active: true,
-            price: 200,
-            is_new: true,
-            description:
-              'lorem sdkjflksdföklsd ösöldgölsdögksdk skdgklsdgklsdkl skdklfsdkgklsdsd,fsdlkglksdg',
-            brandId: 1,
-            taxTypeId: 1,
-          }}
-        />
-      </div>
-      <Login />
-
       <FeaturedProducts />
       <LatestProducts />
     </>

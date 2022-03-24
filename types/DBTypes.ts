@@ -48,3 +48,7 @@ export type BrandProduct = {
   category: Category;
   id: number;
 };
+
+export interface CartProduct extends Product {
+  count: number;
+}

@@ -16,6 +16,7 @@ module.exports = {
       grey: '#C4C4C4',
       lightgrey: '#A7A7A7',
       lightgreyx2: '#f0f0f0',
+      transparentGray: '#C4C4C480',
       primary: '#F46B5B',
       black: '#383838',
       lightprimary: '#F46B5B20',
