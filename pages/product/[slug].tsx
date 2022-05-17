@@ -15,10 +15,10 @@ import { FiHeart } from 'react-icons/fi';
 
 export default function ProductDetils() {
   const router = useRouter();
+  const { slug } = router.query;
   const [count, setCount] = useState(1);
   const [{ favorite, cart }, changeState] = useStateValue();
 
-  const { slug } = router.query;
   const { currency } = useSettings();
 
   const { data, isError, isLoading } = useProduct({ slug });

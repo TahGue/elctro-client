@@ -3,3 +3,4 @@ export const CHANGE_CART = 'CHANGE_CART';
 
 export const ADD_TO_FAVORITE = 'ADD_TO_FAVORITE';
 export const CHANGE_FAVORITE = 'CHANGE_FAVORITE';
+export const SET_USER = 'SET_USER';

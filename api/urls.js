@@ -17,4 +17,11 @@ export const urls = {
     getBySlug: `${BASE_URL}/products/slug`,
     search: `${BASE_URL}/products/search`,
   },
+  auth: {
+    login: `${BASE_URL}/auth/user`,
+    register: `${BASE_URL}/auth/signup-user`,
+    requestChangePassword: `${BASE_URL}/auth/forget`,
+    ValidateToken: `${BASE_URL}/auth/validate`,
+    reset: `${BASE_URL}/auth/reset`,
+  },
 };

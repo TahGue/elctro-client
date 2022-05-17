@@ -3,6 +3,7 @@ import {
   ADD_TO_FAVORITE,
   CHANGE_CART,
   CHANGE_FAVORITE,
+  SET_USER,
 } from './stateTypes';
 
 export const initialState = {
@@ -13,27 +14,10 @@ export const initialState = {
 // dashboard
 export const reducer = (state, action) => {
   switch (action.type) {
-    case ADD_TO_CART:
+    case SET_USER:
       return {
         ...state,
-        cart: addToCart(state.cart, action.payload),
-      };
-    case CHANGE_CART:
-      return {
-        ...state,
-        cart: action.payload,
-      };
-
-    case ADD_TO_FAVORITE:
-      return {
-        ...state,
-        favorite: addToFavorite(state.favorite, action.payload),
-      };
-
-    case CHANGE_FAVORITE:
-      return {
-        ...state,
-        favorite: action.payload,
+        user: action.payload,
       };
 
     default:

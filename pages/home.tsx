@@ -5,10 +5,11 @@ import Button from '../ui/Button';
 import CategoriesCarousel from '../components/categoriesCarousel/CategoriesCarousel';
 import ProductCard from '../components/product/ProductCard';
 import ProductCard2 from '../components/product/ProductCard2';
-import Login from '../components/login';
+import Login from '../components/auth/login';
 import FeaturedProducts from '../components/featuredProduct/FeaturedProducts';
 import BrandsCarousel from '../components/brandsCarousel/BrandsCarousel';
 import LatestProducts from '../components/latestProducts/LatestProducts';
+import Main from '../components/auth/Main';
 
 export default function home() {
   return (
@@ -62,6 +63,7 @@ export default function home() {
 
       <FeaturedProducts />
       <LatestProducts />
+      <Main />
     </>
   );
 }
