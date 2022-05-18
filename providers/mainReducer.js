@@ -4,6 +4,7 @@ import {
   CHANGE_CART,
   CHANGE_FAVORITE,
   SET_USER,
+  REMOVE_FROM_CART,
 } from './stateTypes';
 
 export const initialState = {
@@ -18,6 +19,36 @@ export const reducer = (state, action) => {
       return {
         ...state,
         user: action.payload,
+      };
+
+    case ADD_TO_CART:
+      return {
+        ...state,
+        cart: addToCart(state.cart, action.payload),
+      };
+
+    case ADD_TO_FAVORITE:
+      return {
+        ...state,
+        favorite: addToFavorite(state.favorite, action.payload),
+      };
+
+    case CHANGE_CART:
+      return {
+        ...state,
+        cart: changeCustomCart(state.cart, action.payload),
+      };
+
+    case REMOVE_FROM_CART:
+      return {
+        ...state,
+        cart: removeFromCart(state.cart, action.payload),
+      };
+
+    case CHANGE_FAVORITE:
+      return {
+        ...state,
+        favorite: action.payload,
       };
 
     default:
