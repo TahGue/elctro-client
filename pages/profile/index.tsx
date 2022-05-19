@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AccountDetails from '../../components/profile/AccountDetails';
-import Favorite from '../../components/profile/favorite';
+import Favorite from '../../components/profile/Favorite';
 
 import TopMenu from '../../components/profile/TopMenu';
 

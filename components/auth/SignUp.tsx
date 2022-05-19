@@ -24,7 +24,7 @@ export default function SignUp({ setCurrentPage, callbackUrl = '/' }: Iprops) {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (password !== comfirmpassword)
+    if (password === comfirmpassword) {
       registerMutate({
         email,
         password,
@@ -32,7 +32,8 @@ export default function SignUp({ setCurrentPage, callbackUrl = '/' }: Iprops) {
         tel,
         personal_number,
       });
-    router.push(callbackUrl);
+      router.push(callbackUrl);
+    }
   };
 
   return (
