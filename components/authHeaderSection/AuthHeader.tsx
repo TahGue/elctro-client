@@ -34,7 +34,7 @@ export default function AuthHeader() {
       </span>
       {!user && (
         <>
-          <Link href='/signin'>
+          <Link href=''>
             <span className='decoration-1 underline text-primary cursor-pointer p-2 transition-all hover:text-primary hover:scale-110'>
               SignIn
             </span>
