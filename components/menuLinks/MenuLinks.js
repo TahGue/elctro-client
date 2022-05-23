@@ -9,27 +9,27 @@ export default function MenuLinks({
   return (
     <div>
       <div className={` text-lg ${containerClassName}`}>
-        <Link href=''>
+        <Link href='/'>
           <span className=' p-2 m-2 text-black cursor-pointer hover:text-primary transition-all'>
             {t('home')}
           </span>
         </Link>
-        <Link href=''>
+        <Link href='/sell'>
           <span className='p-2 m-2 text-black cursor-pointer hover:text-primary transition-all'>
             Sell
           </span>
         </Link>
-        <Link href=''>
+        <Link href='/shop'>
           <span className='p-2 m-2 text-black cursor-pointer hover:text-primary transition-all'>
-            Buy
+            Shop
           </span>
         </Link>
-        <Link href=''>
+        <Link href='/repair'>
           <span className='p-2 m-2 text-black cursor-pointer hover:text-primary transition-all'>
             Repair
           </span>
         </Link>
-        <Link href=''>
+        <Link href='contactus'>
           <span className='p-2 m-2 text-black cursor-pointer hover:text-primary transition-all'>
             Contact us
           </span>

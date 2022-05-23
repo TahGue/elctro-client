@@ -1,66 +1,68 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import React from "react";
+import { SwiperSlide } from "swiper/react";
+import CustomSlider from "../components/slider/CustomSlider";
+import Button from "../ui/Button";
+import CategoriesCarousel from "../components/categoriesCarousel/CategoriesCarousel";
+import ProductCard from "../components/product/ProductCard";
+import ProductCard2 from "../components/product/ProductCard2";
+import Login from "../components/auth/login";
+import FeaturedProducts from "../components/featuredProduct/FeaturedProducts";
+import BrandsCarousel from "../components/brandsCarousel/BrandsCarousel";
+import LatestProducts from "../components/latestProducts/LatestProducts";
+import Main from "../components/auth/Main";
 
-const Home: NextPage = () => {
+export default function home() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href='https://nextjs.org'>Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href='https://nextjs.org/docs' className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href='https://nextjs.org/learn' className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href='https://github.com/vercel/next.js/tree/canary/examples'
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+    <>
+      <CustomSlider>
+        <SwiperSlide>
+          <div className="w-full h-96 bg-lightgrey rounded-xl p-14  ">
+            <h3 className=" text-5xl  text-black font-bold">
+              Better Devices for Better Life
+            </h3>
+            <p className=" text-grey text-2xl mt-5 ">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor.
             </p>
-          </a>
-        </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src='/vercel.svg' alt='Vercel Logo' width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+            <Button
+              onClick={() => {}}
+              color="primary"
+              size="large"
+              rounded="lg"
+            >
+              Start shop
+            </Button>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="w-full h-96 bg-lightgrey rounded-xl p-14  ">
+            <h3 className=" text-5xl  text-black font-bold">
+              Better Devices for Better Life
+            </h3>
+            <p className=" text-grey text-2xl m-5 ">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor.
+            </p>
+
+            <Button
+              onClick={() => {}}
+              color="primary"
+              size="large"
+              rounded="lg"
+            >
+              Start shop
+            </Button>
+          </div>
+        </SwiperSlide>
+      </CustomSlider>
+      <CategoriesCarousel />
+
+      <BrandsCarousel />
+
+      <FeaturedProducts />
+      <LatestProducts />
+    </>
   );
-};
-
-export default Home;
+}
