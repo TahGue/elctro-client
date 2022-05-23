@@ -5,12 +5,14 @@ import {
   CHANGE_FAVORITE,
   SET_USER,
   REMOVE_FROM_CART,
+  DISPLAY_FORM,
 } from './stateTypes';
 
 export const initialState = {
   cart: [],
   favorite: [],
   user: null,
+  displayForm: "",
 };
 // dashboard
 export const reducer = (state, action) => {
@@ -49,6 +51,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         favorite: action.payload,
+      };
+
+    case DISPLAY_FORM:
+      return {
+        ...state,
+        displayForm: action.payload,
       };
 
     default:
