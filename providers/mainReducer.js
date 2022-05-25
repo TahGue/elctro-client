@@ -6,13 +6,14 @@ import {
   SET_USER,
   REMOVE_FROM_CART,
   DISPLAY_FORM,
+  SET_CART,
 } from './stateTypes';
 
 export const initialState = {
   cart: [],
   favorite: [],
   user: null,
-  displayForm: "",
+  displayForm: '',
 };
 // dashboard
 export const reducer = (state, action) => {
@@ -34,11 +35,18 @@ export const reducer = (state, action) => {
         ...state,
         favorite: addToFavorite(state.favorite, action.payload),
       };
-
+    // change a sigle product in cart
     case CHANGE_CART:
       return {
         ...state,
         cart: changeCustomCart(state.cart, action.payload),
+      };
+
+    // set a new cart
+    case SET_CART:
+      return {
+        ...state,
+        cart: action.payload,
       };
 
     case REMOVE_FROM_CART:

@@ -15,7 +15,7 @@ const CartDrawer = ({ open = false, onClose }: IProps) => {
   return (
     <div className='fixed top-0 left-0 z-30 w-screen h-screen bg-transparentGray flex justify-end'>
       <ClickAway onClickAway={onClose} className=' bg-white w-1/3 h-screen'>
-        <div className=' bg-white w-1/3 h-screen animate-fade-in-up'>
+        <div className=' bg-white w-full h-screen animate-fade-in-up'>
           {cart.map((product: CartProduct) => (
             <CartItem key={product.id} product={product} />
           ))}

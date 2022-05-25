@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { FaWizardsOfTheCoast } from 'react-icons/fa';
 
 const sizes = {
   xLarge: ' px-6 py-3',
@@ -32,6 +31,7 @@ type Iprops = {
   onClick?: () => void;
   type?: string;
   disabled?: boolean;
+  className?: string;
 };
 
 export default function Button({
@@ -41,7 +41,7 @@ export default function Button({
   rounded = 'sm',
   width = 'full',
   disabled = false,
-
+  className,
   onClick,
   type = 'text',
 }: Iprops) {
@@ -51,6 +51,8 @@ export default function Button({
       className={`
        transition-all
       ${sizes[size]} ${colors[color]} ${roundeds[rounded]} ${widths[width]}
+
+      ${className}
       `}
       onClick={onClick}
     >

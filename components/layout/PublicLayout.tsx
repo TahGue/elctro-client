@@ -1,11 +1,11 @@
-import Head from "next/head";
-import React from "react";
-import { useSettings } from "../../hooks/useSettings";
-import Footer from "../layout/Footer";
-import TopBar from "../TopBar";
-import Header from "./Header";
-import SubscribeForm from "../subscribe";
-import { useStateValue } from "../../providers/StateContext";
+import Head from 'next/head';
+import React from 'react';
+import { useSettings } from '../../hooks/useSettings';
+import Footer from '../layout/Footer';
+import TopBar from '../TopBar';
+import Header from './Header';
+import SubscribeForm from '../subscribe';
+import { useStateValue } from '../../providers/StateContext';
 
 type Props = {
   children: React.ReactNode;
@@ -20,21 +20,20 @@ const PublicLayout: React.FC<Props> = ({ children, title }) => {
     <>
       <Head>
         <link
-          rel="shortcut icon"
-          href="https://electromobil.se/wp-content/uploads/2018/12/favicon.png"
-          type="image/x-icon"
+          rel='shortcut icon'
+          href='https://electromobil.se/wp-content/uploads/2018/12/favicon.png'
+          type='image/x-icon'
         ></link>
         <title>{companyName}</title>
       </Head>
-      <div className="mx-40 my-5">
+      <div className='mx-40 my-5'>
         <TopBar />
         <Header />
-        <div className="my-10 h-screen ">{children}</div>
-        <br />
-        <SubscribeForm />
-
-        <Footer />
       </div>
+      <div>{children}</div>
+      <SubscribeForm />
+
+      <Footer />
     </>
   );
 };

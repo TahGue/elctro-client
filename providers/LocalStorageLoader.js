@@ -2,7 +2,7 @@ import { isFuture, isPast } from 'date-fns';
 import jwtDecode from 'jwt-decode';
 import React, { useEffect } from 'react';
 import { useStateValue } from './StateContext';
-import { CHANGE_CART, CHANGE_FAVORITE, SET_USER } from './stateTypes';
+import { CHANGE_CART, CHANGE_FAVORITE, SET_CART, SET_USER } from './stateTypes';
 
 function LocalStorageLoader({ children }) {
   const [{}, changeState] = useStateValue();
@@ -13,7 +13,7 @@ function LocalStorageLoader({ children }) {
       : [];
 
     changeState({
-      type: CHANGE_CART,
+      type: SET_CART,
       payload: newCart,
     });
 
