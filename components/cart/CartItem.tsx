@@ -4,7 +4,7 @@ import { CartProduct, Product } from '../../types/DBTypes';
 import CountChanger from './CountChanger';
 import { useSettings } from './../../hooks/useSettings';
 import { useStateValue } from '../../providers/StateContext';
-import { CHANGE_CART } from '../../providers/stateTypes';
+import { CHANGE_CART, REMOVE_FROM_CART } from '../../providers/stateTypes';
 import { FiX } from 'react-icons/fi';
 import Price from '../shared/Price';
 
@@ -21,6 +21,13 @@ function CartItem({ product }: IProps) {
         payload: { ...product, count: val },
       });
     }
+  };
+
+  const removeItem = () => {
+    changeState({
+      type: REMOVE_FROM_CART,
+      payload: product,
+    });
   };
 
   return (
@@ -41,7 +48,10 @@ function CartItem({ product }: IProps) {
         </div>
       </div>
       <div>
-        <div className=' text-primary cursor-pointer w-12 '>
+        <div
+          onClick={removeItem}
+          className=' text-primary cursor-pointer w-12 '
+        >
           <FiX />
         </div>
       </div>

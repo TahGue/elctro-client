@@ -78,7 +78,7 @@ const addToCart = (cart, item) => {
     newCart.find((c) => c.id === item.id).count =
       cart.find((c) => c.id === item.id).count + item.count;
   } else {
-    item.count = item.count || 1;
+    item.count = 1;
     newCart = [...newCart, item];
   }
   localStorage.setItem('cart', JSON.stringify(newCart));
