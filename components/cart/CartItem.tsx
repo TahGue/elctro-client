@@ -5,8 +5,8 @@ import CountChanger from './CountChanger';
 import { useSettings } from './../../hooks/useSettings';
 import { useStateValue } from '../../providers/StateContext';
 import { CHANGE_CART } from '../../providers/stateTypes';
-import { X } from 'react-feather';
-import Button from '../../ui/Button';
+import { FiX } from 'react-icons/fi';
+import Price from '../shared/Price';
 
 type IProps = {
   product: CartProduct;
@@ -24,21 +24,26 @@ function CartItem({ product }: IProps) {
   };
 
   return (
-    <div className='flex items-center p-4 m-2 w-full'>
-      <div className='flex items-center p-4 m-2 w-full'>
+    <div className='flex items-center justify-between p-4 m-2 w-full border-b border-lightgreyx2 '>
+      <div className='flex items-center'>
         <div className='flex items-center p-2 w-40 '>
           <img src={product.image} className='w-full h-auto' />
         </div>
-        <div className='flex justify-between flex-col h-full'>
-          <h4>{product.name}</h4>
-          <span>{`${product.price} ${currency}`}</span>
-          <CountChanger value={product.count} changeCount={changeCount} />
+        <div className='flex justify-between items-stretch flex-col h-full'>
+          <h4 className='m-2'>{product.name}</h4>
+
+          <span className='m-2'>
+            <Price price={product.price} currency={currency} size='sm' />
+          </span>
+          <div className='m-2'>
+            <CountChanger value={product.count} changeCount={changeCount} />
+          </div>
         </div>
       </div>
       <div>
-        <Button>
-          <X />
-        </Button>
+        <div className=' text-primary cursor-pointer w-12 '>
+          <FiX />
+        </div>
       </div>
     </div>
   );

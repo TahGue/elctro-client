@@ -1,9 +1,11 @@
 import React from 'react';
+import { calculatePrice } from '../../helpers/helper';
 import { useStateValue } from '../../providers/StateContext';
 
 import { CartProduct, Product } from '../../types/DBTypes';
 import { ClickAway } from '../../ui/ClickAway';
 import CartItem from './CartItem';
+import CartSummery from './CartSummery';
 
 type IProps = {
   onClose: () => void;
@@ -19,6 +21,9 @@ const CartDrawer = ({ open = false, onClose }: IProps) => {
           {cart.map((product: CartProduct) => (
             <CartItem key={product.id} product={product} />
           ))}
+          <div className='p-6'>
+            <CartSummery total={calculatePrice(cart)} onShopping={onClose} />
+          </div>
         </div>
       </ClickAway>
     </div>
