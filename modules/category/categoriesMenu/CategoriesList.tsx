@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Category } from '../../types/DBTypes';
+import { Category } from '../../../types/DBTypes';
 
 type IProps = {
   categories: Category[];

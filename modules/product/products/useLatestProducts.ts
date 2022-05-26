@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 
-import Product from '../../api/Product';
+import Product from '../Product';
 
 export const useLatestProducts = () => {
   const { data, isLoading, isError } = useQuery('latestProducts', () =>

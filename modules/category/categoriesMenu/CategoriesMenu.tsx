@@ -1,8 +1,9 @@
 import Axios from 'axios';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { BiCategory } from 'react-icons/bi';
-import { useCategories } from '../../hooks/useCategories';
-import { ClickAway } from '../../ui/ClickAway';
+import { ClickAway } from '../../../ui/ClickAway';
+import { useCategories } from '../categoryHooks/useCategories';
+
 import CategoriesList from './CategoriesList';
 
 export default function CategoriesMenu() {

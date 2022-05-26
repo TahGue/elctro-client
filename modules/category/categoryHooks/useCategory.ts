@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import Category from '../api/Category';
+import Category from './Category';
 
 type IProps = {
   slug: string | string[] | undefined;

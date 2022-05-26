@@ -2,14 +2,10 @@ import React from 'react';
 import { SwiperSlide } from 'swiper/react';
 import CustomSlider from '../components/slider/CustomSlider';
 import Button from '../ui/Button';
-import CategoriesCarousel from '../components/categoriesCarousel/CategoriesCarousel';
-import ProductCard from '../components/product/ProductCard';
-import ProductCard2 from '../components/product/SearchProductItem';
-import Login from '../components/auth/login';
+import CategoriesCarousel from '../modules/category/categoriesCarousel/CategoriesCarousel';
 import FeaturedProducts from '../components/featuredProduct/FeaturedProducts';
-import BrandsCarousel from '../components/brandsCarousel/BrandsCarousel';
+import BrandsCarousel from '../modules/brand/brandsCarousel/BrandsCarousel';
 import LatestProducts from '../components/latestProducts/LatestProducts';
-import Main from '../components/auth/Main';
 
 export default function home() {
   return (

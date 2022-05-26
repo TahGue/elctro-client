@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { CartProduct, Product } from '../../types/DBTypes';
 import CountChanger from './CountChanger';
-import { useSettings } from './../../hooks/useSettings';
+import { useSettings } from '../../hooks/useSettings';
 import { useStateValue } from '../../providers/StateContext';
 import { CHANGE_CART, REMOVE_FROM_CART } from '../../providers/stateTypes';
 import { FiX } from 'react-icons/fi';

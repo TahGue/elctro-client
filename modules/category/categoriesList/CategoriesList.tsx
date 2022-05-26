@@ -1,6 +1,6 @@
 import React from 'react';
-import { useCategories } from '../../hooks/useCategories';
-import { Category } from '../../types/DBTypes';
+import { Category } from '../../../types/DBTypes';
+import { useCategories } from '../categoryHooks/useCategories';
 import CategoryItem from './CategoryItem';
 
 type IProps = {

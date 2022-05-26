@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { urls } from './urls';
+import { urls } from '../../../api/urls';
 
 class Brand {
   static async getAll() {

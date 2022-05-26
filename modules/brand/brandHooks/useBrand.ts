@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import Brand from '../api/Brand';
+import Brand from './Brand';
 
 type IProps = {
   slug: string | string[] | undefined;

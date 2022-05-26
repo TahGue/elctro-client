@@ -1,6 +1,6 @@
-import { Category, Brand } from './../../types/DBTypes';
+import { Category, Brand } from '../../../types/DBTypes';
 import { useQuery } from 'react-query';
-import Product from '../../api/Product';
+import Product from '../Product';
 import { useEffect } from 'react';
 
 type IProps = {

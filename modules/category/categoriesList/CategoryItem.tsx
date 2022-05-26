@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiCircle, FiCheckCircle } from 'react-icons/fi';
-import { Category } from '../../types/DBTypes';
+import { Category } from '../../../types/DBTypes';
 import Image from 'next/image';
 
 type IProps = {

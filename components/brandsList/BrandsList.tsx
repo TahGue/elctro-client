@@ -1,5 +1,5 @@
 import React from 'react';
-import { useBrands } from '../../hooks/useBrands';
+import { useBrands } from '../../modules/brand/brandHooks/useBrands';
 import { Brand } from '../../types/DBTypes';
 import BrandItem from './BrandItem';
 
