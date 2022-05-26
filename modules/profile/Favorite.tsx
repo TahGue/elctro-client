@@ -1,9 +1,9 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-grid-system';
-import ProductCard from '../product/ProductCard';
+import ProductCard from '../../components/product/ProductCard';
 import { useStateValue } from '../../providers/StateContext';
 import { Product } from '../../types/DBTypes';
-import Empty from '../empty/Empty';
+import Empty from '../../components/empty/Empty';
 
 const Favorite = () => {
   const [{ favorite }] = useStateValue();

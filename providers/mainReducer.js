@@ -1,3 +1,4 @@
+import { CartProduct, Product } from '../types/DBTypes';
 import {
   ADD_TO_CART,
   ADD_TO_FAVORITE,
@@ -8,6 +9,21 @@ import {
   DISPLAY_FORM,
   SET_CART,
 } from './stateTypes';
+
+/*
+
+type StateType = {
+  cart: CartProduct[];
+  favorite: Product[];
+  user: Object | null;
+  displayForm: string;
+};
+
+type actionType = {
+  type: string;
+  payload: any;
+};
+*/
 
 export const initialState = {
   cart: [],
@@ -73,10 +89,10 @@ export const reducer = (state, action) => {
 };
 
 const addToCart = (cart, item) => {
-  let newCart = cart;
-  if (cart?.find((c) => c?.id === item?.id)) {
+  let newCart = cart || [];
+  if (cart.find((c) => c?.id === item?.id)) {
     newCart.find((c) => c.id === item.id).count =
-      cart.find((c) => c.id === item.id).count + item.count;
+      cart.find((c) => c.id === item.id).count + item.count || 1;
   } else {
     item.count = 1;
     newCart = [...newCart, item];

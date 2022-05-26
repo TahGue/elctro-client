@@ -21,7 +21,7 @@ const Header: React.FC<Props> = () => {
         <div className='w-1/2'>
           <div className='flex'>
             <CategoriesMenu />
-            <SearchBar />
+            <SearchBar onChange={() => {}} value={''} />
           </div>
         </div>
         <div className='w-60'>

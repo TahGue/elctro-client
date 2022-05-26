@@ -4,12 +4,25 @@ import React, { useEffect } from 'react';
 import { useStateValue } from './StateContext';
 import { CHANGE_CART, CHANGE_FAVORITE, SET_CART, SET_USER } from './stateTypes';
 
-function LocalStorageLoader({ children }) {
+type IProps = {
+  children: React.ReactNode;
+};
+
+type JWTDecodeType = {
+  exp: number;
+  iat: number;
+  sub: string;
+  id: string;
+  name: string;
+  email: string;
+};
+
+function LocalStorageLoader({ children }: IProps) {
   const [{}, changeState] = useStateValue();
 
   useEffect(() => {
     const newCart = localStorage.getItem('cart')
-      ? JSON.parse(localStorage.getItem('cart'))
+      ? JSON.parse(localStorage.getItem('cart') || '')
       : [];
 
     changeState({
@@ -18,7 +31,7 @@ function LocalStorageLoader({ children }) {
     });
 
     const newFavorite = localStorage.getItem('favorite')
-      ? JSON.parse(localStorage.getItem('favorite'))
+      ? JSON.parse(localStorage.getItem('favorite') || '')
       : [];
 
     changeState({
@@ -27,7 +40,9 @@ function LocalStorageLoader({ children }) {
     });
 
     const token = localStorage.getItem('token');
-    const decoded = token ? jwtDecode(token) : undefined;
+    const decoded: JWTDecodeType | undefined = token
+      ? jwtDecode(token)
+      : undefined;
 
     if (token && decoded && isFuture(new Date(decoded.exp * 1000))) {
       changeState({

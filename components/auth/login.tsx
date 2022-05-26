@@ -5,7 +5,6 @@ import Button from '../../ui/Button';
 import { Checkbox } from '../../ui/Checkbox';
 import { useLogin } from '../../hooks/auth/useLogin';
 import { useRouter } from 'next/router';
-import { Overlay } from '../../ui/Overlay';
 
 type Iprops = {
   callbackUrl?: string;

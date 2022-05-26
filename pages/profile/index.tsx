@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Empty from '../../components/empty/Empty';
-import AccountDetails from '../../components/profile/AccountDetails';
-import Favorite from '../../components/profile/Favorite';
+import AccountDetails from '../../modules/profile/AccountDetails';
+import Favorite from '../../modules/profile/Favorite';
 
-import TopMenu from '../../components/profile/TopMenu';
+import TopMenu from '../../modules/profile/TopMenu';
 import { useStateValue } from '../../providers/StateContext';
 
 const Profile = () => {

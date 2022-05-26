@@ -45,52 +45,54 @@ export default function Shop() {
     }
   };
 
+  const onChangeText = async (e: any) => {
+    setSearchText(e.target.value);
+  };
   return (
     <div>
-      {isLoading && <CircleLoader />}
-      {!isLoading && data && (
-        <Container>
-          <Row>
-            <Col
-              sm={12}
-              lg={3}
-              md={3}
-              className='border rounded-md border-lightgreyx2'
-            >
-              <div className='flex p-2 w-full h-12'>
-                <SearchBar
-                  value={searchText}
-                  onChange={(e) => setSearchText(e.target.value)}
+      <Container>
+        <Row>
+          <Col
+            sm={12}
+            lg={3}
+            md={3}
+            className='border rounded-md border-lightgreyx2'
+          >
+            <div className='flex p-2 w-full h-12'>
+              <SearchBar value={searchText} onChange={onChangeText} autoFocus />
+            </div>
+            <div className='mt-2 p-2  max-h-44 overflow-auto  border-t border-lightgreyx2 rounded-sm '>
+              <Collapse title='Categories'>
+                <CategoriesList
+                  onSelect={onSelectCategory}
+                  selectedCategories={selectedCategories}
                 />
-              </div>
-              <div className='mt-2 p-2  max-h-44 overflow-auto  border-t border-lightgreyx2 rounded-sm '>
-                <Collapse title='Categories'>
-                  <CategoriesList
-                    onSelect={onSelectCategory}
-                    selectedCategories={selectedCategories}
-                  />
-                </Collapse>
-              </div>
-              <div className='mt-2 p-2 rounded-sm border-t border-lightgreyx2'>
-                <Collapse title='Brands'>
-                  <BrandsList
-                    onSelect={onSelectBrand}
-                    selectedBrands={selectedBrands}
-                  />
-                </Collapse>
-              </div>
+              </Collapse>
+            </div>
+            <div className='mt-2 p-2 rounded-sm border-t border-lightgreyx2'>
+              <Collapse title='Brands'>
+                <BrandsList
+                  onSelect={onSelectBrand}
+                  selectedBrands={selectedBrands}
+                />
+              </Collapse>
+            </div>
 
-              <div className='mt-2 p-2  border-t border-lightgreyx2'>
-                <Collapse title='Filter by price'>
-                  <PriceRange value={priceRange} onChange={setPriceRange} />
-                </Collapse>
-              </div>
-            </Col>
-            <Col sm={12} lg={9} md={9}>
+            <div className='mt-2 p-2  border-t border-lightgreyx2'>
+              <Collapse title='Filter by price'>
+                <PriceRange
+                  value={priceRange || [0, 1]}
+                  onChange={setPriceRange}
+                />
+              </Collapse>
+            </div>
+          </Col>
+          <Col sm={12} lg={9} md={9} style={{ minHeight: '100vh' }}>
+            <Container>
               {isLoading ? (
-                <h1>Loading ...</h1>
+                <CircleLoader />
               ) : (
-                <Container>
+                <>
                   <Row>
                     {data?.products?.map((pro: Product) => (
                       <Col key={pro.id} lg={4} md={4} sm={12}>
@@ -100,20 +102,22 @@ export default function Shop() {
                       </Col>
                     ))}
                   </Row>
-                  <Row>
-                    <Paginator
-                      totalItems={data?.totalCount}
-                      perPage={21}
-                      onSelectPage={(p) => setPage(p)}
-                      currentPage={page}
-                    />
-                  </Row>
-                </Container>
+                </>
               )}
-            </Col>
-          </Row>
-        </Container>
-      )}
+            </Container>
+          </Col>
+        </Row>
+        <Row>
+          {!isLoading && data && data.totalCount && (
+            <Paginator
+              totalItems={data.totalCount}
+              perPage={21}
+              onSelectPage={(p) => setPage(p)}
+              currentPage={page}
+            />
+          )}
+        </Row>
+      </Container>
     </div>
   );
 }

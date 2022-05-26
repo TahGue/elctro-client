@@ -17,7 +17,7 @@ function Paginator({
 
   return (
     <div className='flex w-full justify-center items-center pt-4'>
-      {pages.map((page) => (
+      {pages?.map((page) => (
         <div
           onClick={() => onSelectPage(page + 1)}
           key={page}

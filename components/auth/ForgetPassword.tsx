@@ -1,11 +1,7 @@
 import React, { Dispatch, SetStateAction, useState } from 'react';
-import Image from 'next/image';
 import Textfield from '../../ui/TextField';
 import Button from '../../ui/Button';
-import { Checkbox } from '../../ui/Checkbox';
-import { useLogin } from '../../hooks/auth/useLogin';
 import { useRouter } from 'next/router';
-import { Overlay } from '../../ui/Overlay';
 import { useRequestPassword } from '../../hooks/auth/useRequestPassword';
 
 type Iprops = {
