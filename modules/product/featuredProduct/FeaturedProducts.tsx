@@ -1,10 +1,10 @@
 import React from 'react';
-import CustomSlider from '../slider/CustomSlider';
-import { Category, Product } from '../../types/DBTypes';
+import CustomSlider from '../../../components/slider/CustomSlider';
+import { Category, Product } from '../../../types/DBTypes';
 import Image from 'next/image';
 import { SwiperSlide } from 'swiper/react';
-import ProductCard from '../product/ProductCard';
-import { useFeaturedProducts } from '../../modules/product/productHooks/useFeaturedProducts';
+import ProductCard from '../../../components/product/ProductCard';
+import { useFeaturedProducts } from '../productHooks/useFeaturedProducts';
 
 function FeaturedProducts() {
   const { data, isLoading } = useFeaturedProducts();

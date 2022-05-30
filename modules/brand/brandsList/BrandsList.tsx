@@ -1,6 +1,6 @@
 import React from 'react';
-import { useBrands } from '../../modules/brand/brandHooks/useBrands';
-import { Brand } from '../../types/DBTypes';
+import { useBrands } from '../brandHooks/useBrands';
+import { Brand } from '../../../types/DBTypes';
 import BrandItem from './BrandItem';
 
 type IProps = {

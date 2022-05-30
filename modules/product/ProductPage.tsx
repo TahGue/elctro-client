@@ -10,7 +10,7 @@ import { FaCarSide, FaHeart } from 'react-icons/fa';
 import { ADD_TO_FAVORITE, ADD_TO_CART } from '../../providers/stateTypes';
 import { useStateValue } from '../../providers/StateContext';
 import { FiHeart } from 'react-icons/fi';
-import CountChanger from '../../components/cart/CountChanger';
+import CountChanger from '../cart/cart/CountChanger';
 import IconText from '../../components/shared/IconText';
 import Price from '../../components/shared/Price';
 import { useSettings } from '../../hooks/useSettings';

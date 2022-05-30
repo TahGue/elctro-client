@@ -1,10 +1,10 @@
 import { SwiperSlide } from 'swiper/react';
-import FeaturedProducts from '../../components/featuredProduct/FeaturedProducts';
-import LatestProducts from '../../components/latestProducts/LatestProducts';
+import FeaturedProducts from '../product/featuredProduct/FeaturedProducts';
 import CustomSlider from '../../components/slider/CustomSlider';
 import Button from '../../ui/Button';
 import BrandsCarousel from '../brand/brandsCarousel/BrandsCarousel';
 import CategoriesCarousel from '../category/categoriesCarousel/CategoriesCarousel';
+import LatestProducts from '../product/latestProducts/LatestProducts';
 
 export default function HomePage() {
   return (

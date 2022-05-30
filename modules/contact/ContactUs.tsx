@@ -10,7 +10,7 @@ import {
 import { FiPhone } from 'react-icons/fi';
 import { GoMail } from 'react-icons/go';
 
-import { useSettings } from '../hooks/useSettings';
+import { useSettings } from '../../hooks/useSettings';
 
 export default function ContactUs() {
   const { companyName, companyEmail, companyTel } = useSettings();

@@ -1,10 +1,11 @@
 import React from 'react';
-import CustomSlider from '../slider/CustomSlider';
-import { Category, Product } from '../../types/DBTypes';
+
 import Image from 'next/image';
 import { SwiperSlide } from 'swiper/react';
-import ProductCard from '../product/ProductCard';
-import { useLatestProducts } from '../../modules/product/productHooks/useLatestProducts';
+import { useLatestProducts } from '../productHooks/useLatestProducts';
+import CustomSlider from '../../../components/slider/CustomSlider';
+import { Product } from '../../../types/DBTypes';
+import ProductCard from '../../../components/product/ProductCard';
 
 function LatestProducts() {
   const { data, isLoading } = useLatestProducts();

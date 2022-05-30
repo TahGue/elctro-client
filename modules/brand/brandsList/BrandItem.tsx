@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiCircle, FiCheckCircle } from 'react-icons/fi';
-import { Brand } from '../../types/DBTypes';
+import { Brand } from '../../../types/DBTypes';
 import Image from 'next/image';
 
 type IProps = {
