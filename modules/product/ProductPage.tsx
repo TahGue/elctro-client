@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Col, Container, Row } from 'react-grid-system';
 import { Product as ProductType } from '../../types/DBTypes';
 import CircleLoader from '../../components/loaders/CircleLoader';
-import { useProduct } from './products/useProducts';
+import { useProduct } from './productHooks/useProducts';
 import Button from '../../ui/Button';
 import { FaCarSide, FaHeart } from 'react-icons/fa';
 import { ADD_TO_FAVORITE, ADD_TO_CART } from '../../providers/stateTypes';

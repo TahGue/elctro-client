@@ -4,7 +4,7 @@ import { Category, Product } from '../../types/DBTypes';
 import Image from 'next/image';
 import { SwiperSlide } from 'swiper/react';
 import ProductCard from '../product/ProductCard';
-import { useLatestProducts } from '../../modules/product/products/useLatestProducts';
+import { useLatestProducts } from '../../modules/product/productHooks/useLatestProducts';
 
 function LatestProducts() {
   const { data, isLoading } = useLatestProducts();

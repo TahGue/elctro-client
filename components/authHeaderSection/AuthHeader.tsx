@@ -6,7 +6,7 @@ import { MdOutlineEmail } from 'react-icons/md';
 import { RiShoppingBagLine } from 'react-icons/ri';
 import { useStateValue } from '../../providers/StateContext';
 import { DISPLAY_FORM } from '../../providers/stateTypes';
-import CartDrawer from '../cart/CartDrawer';
+import CartDrawer from '../../modules/cart/cart/CartDrawer';
 export default function AuthHeader() {
   const [{ cart, user }, changeState] = useStateValue();
   const [displayCart, setDisplayCart] = useState(false);

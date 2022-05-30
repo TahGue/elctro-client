@@ -4,7 +4,7 @@ import { Category, Product } from '../../types/DBTypes';
 import Image from 'next/image';
 import { SwiperSlide } from 'swiper/react';
 import ProductCard from '../product/ProductCard';
-import { useFeaturedProducts } from '../../modules/product/products/useFeaturedProducts';
+import { useFeaturedProducts } from '../../modules/product/productHooks/useFeaturedProducts';
 
 function FeaturedProducts() {
   const { data, isLoading } = useFeaturedProducts();

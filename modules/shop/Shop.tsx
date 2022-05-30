@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-grid-system';
-import BrandsList from '../../components/brandsList/BrandsList';
+import BrandsList from '../brand/brandsList/BrandsList';
 import CategoriesList from '../category/categoriesList/CategoriesList';
 import CircleLoader from '../../components/loaders/CircleLoader';
 import Paginator from '../../components/paginator/Paginator';
 import PriceRange from '../../components/priceRange/PriceRange';
 import ProductCard from '../../components/product/ProductCard';
 import SearchBar from '../../components/searchBar/SearchBar';
-import { useShop } from '../product/products/useShop';
+import { useShop } from './shopHooks/useShop';
 import { Brand, Category, Product } from '../../types/DBTypes';
 import Collapse from '../../ui/Collapse';
 
