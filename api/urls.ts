@@ -24,4 +24,7 @@ export const urls = {
     ValidateToken: `${BASE_URL}/auth/validate`,
     reset: `${BASE_URL}/auth/reset`,
   },
+  payment: {
+    stripe: `${BASE_URL}/payment/stripe`,
+  },
 };

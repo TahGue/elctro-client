@@ -6,5 +6,7 @@ export const useSettings = () => {
     companyLogo: '/electroLogo.png',
     companyFavicon: '/electroLogo.png',
     currency: 'SEK',
+    paypalClientId: 'paypalClientId',
+    stripePublicKey: 'stripePublicKey',
   };
 };
