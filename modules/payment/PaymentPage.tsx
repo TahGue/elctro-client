@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useStateValue } from '../../providers/StateContext';
+import { calculatePrice } from '../../helpers/helper';
 
-export class PaymentPage extends Component {
-  render() {
-    return <div>PaymentPage</div>;
-  }
+function PaymentPage() {
+  const [{ cart }] = useStateValue();
+
+  return <div>{calculatePrice(cart)}</div>;
 }
 
 export default PaymentPage;

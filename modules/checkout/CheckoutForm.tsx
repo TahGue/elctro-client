@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { useStateValue } from '../../providers/StateContext';
+import Button from '../../ui/Button';
 
 interface MyFormValues {
   firstName: string;
@@ -103,26 +104,47 @@ export const CheckoutForm: React.FC<{}> = () => {
 
           <div className=' flex row'>
             <div className=' w-1/2 p-2'>
-              <label htmlFor='country'>Country</label>
+              <label htmlFor='street'>Street</label>
               <Field
-                id='country'
-                name='country'
-                placeholder='Country'
+                id='street'
+                name='street'
+                placeholder='street'
                 className='w-full p-2 border border-lightgrey'
               />
             </div>
             <div className='w-1/2 p-2'>
-              <label htmlFor='city'>City</label>
+              <label htmlFor='tel'>Phone</label>
               <Field
-                id='city'
-                name='city'
-                placeholder='City'
+                id='tel'
+                name='tel'
+                placeholder='tel'
                 className='w-full p-2 border border-lightgrey'
               />
             </div>
           </div>
 
-          <button type='submit'>Submit</button>
+          <div className=' flex row'>
+            <div className=' w-1/2 p-2'>
+              <label htmlFor='postcode'>Postal code</label>
+              <Field
+                id='postcode'
+                name='postcode'
+                placeholder='postcode'
+                className='w-full p-2 border border-lightgrey'
+              />
+            </div>
+            <div className='w-1/2 p-2'>
+              <label htmlFor='note'>Note</label>
+              <Field
+                id='note'
+                name='note'
+                placeholder='note'
+                className='w-full p-2 border border-lightgrey'
+              />
+            </div>
+          </div>
+
+          <Button type='submit'>Submit</Button>
         </Form>
       </Formik>
     </div>
