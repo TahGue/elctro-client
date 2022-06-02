@@ -34,12 +34,14 @@ const ProductCard = ({ product }: IProps) => {
   return (
     <div className='relative border border-grey text-center justify-center items-center p-2 m-2'>
       <Link href={`/product/${product.slug}`}>
-        <div>
-          <Image src={product?.image} layout='fixed' width={200} height={200} />
+        <div className='w-full'>
+          <img src={product?.image} className='w-full h-auto' />
         </div>
       </Link>
       <div>
-        <p>{product.name}</p>
+        <div className=' text-sm font-bold w-full h-11 flex justify-center items-center'>
+          <p>{product.name}</p>
+        </div>
         <span>{`${product.price} ${currency}`}</span>
       </div>
       <div>

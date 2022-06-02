@@ -5,8 +5,9 @@ import Link from 'next/link';
 
 import SearchBar from '../../components/searchBar/SearchBar';
 import MenuLinks from './../menuLinks/MenuLinks';
-import CategoriesMenu from '../categoriesMenu/CategoriesMenu';
+
 import AuthHeader from '../authHeaderSection/AuthHeader';
+import CategoriesMenu from '../../modules/category/categoriesMenu/CategoriesMenu';
 type Props = {};
 const Header: React.FC<Props> = () => {
   const { companyLogo } = useSettings();
@@ -21,7 +22,7 @@ const Header: React.FC<Props> = () => {
         <div className='w-1/2'>
           <div className='flex'>
             <CategoriesMenu />
-            <SearchBar />
+            <SearchBar onChange={() => {}} value={''} />
           </div>
         </div>
         <div className='w-60'>

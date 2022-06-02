@@ -1,33 +1,74 @@
+import { CartProduct, Product } from '../types/DBTypes';
 import {
   ADD_TO_CART,
   ADD_TO_FAVORITE,
   CHANGE_CART,
   CHANGE_FAVORITE,
+  SET_USER,
+  REMOVE_FROM_CART,
+  DISPLAY_FORM,
+  SET_CART,
 } from './stateTypes';
+
+/*
+
+type StateType = {
+  cart: CartProduct[];
+  favorite: Product[];
+  user: Object | null;
+  displayForm: string;
+};
+
+type actionType = {
+  type: string;
+  payload: any;
+};
+*/
 
 export const initialState = {
   cart: [],
   favorite: [],
   user: null,
+  displayForm: '',
 };
 // dashboard
 export const reducer = (state, action) => {
   switch (action.type) {
+    case SET_USER:
+      return {
+        ...state,
+        user: action.payload,
+      };
+
     case ADD_TO_CART:
       return {
         ...state,
         cart: addToCart(state.cart, action.payload),
-      };
-    case CHANGE_CART:
-      return {
-        ...state,
-        cart: action.payload,
       };
 
     case ADD_TO_FAVORITE:
       return {
         ...state,
         favorite: addToFavorite(state.favorite, action.payload),
+      };
+    // change a sigle product in cart
+    case CHANGE_CART:
+      return {
+        ...state,
+        cart: changeCustomCart(state.cart, action.payload),
+      };
+
+    // set a new cart
+    case SET_CART:
+      return {
+        ...state,
+        cart: action.payload,
+      };
+
+    case REMOVE_FROM_CART:
+      return {
+        ...state,
+        cart: removeFromCart(state.cart, action.payload),
       };
 
     case CHANGE_FAVORITE:
@@ -36,18 +77,24 @@ export const reducer = (state, action) => {
         favorite: action.payload,
       };
 
+    case DISPLAY_FORM:
+      return {
+        ...state,
+        displayForm: action.payload,
+      };
+
     default:
       return state;
   }
 };
 
 const addToCart = (cart, item) => {
-  let newCart = cart;
-  if (cart?.find((c) => c?.id === item?.id)) {
+  let newCart = cart || [];
+  if (cart.find((c) => c?.id === item?.id)) {
     newCart.find((c) => c.id === item.id).count =
-      cart.find((c) => c.id === item.id).count + item.count;
+      cart.find((c) => c.id === item.id).count + item.count || 1;
   } else {
-    item.count = item.count || 1;
+    item.count = 1;
     newCart = [...newCart, item];
   }
   localStorage.setItem('cart', JSON.stringify(newCart));

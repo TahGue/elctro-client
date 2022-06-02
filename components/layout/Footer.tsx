@@ -23,7 +23,7 @@ import { Col, Container, Row } from 'react-grid-system';
 export default function Footer() {
   const { companyName, companyEmail, companyTel } = useSettings();
   return (
-    <div className='bg-lightprimary  p-5  '>
+    <div className='bg-lightprimary  p-5 '>
       <Container>
         <Row>
           <Col lg={6} md={4} sm={12}>

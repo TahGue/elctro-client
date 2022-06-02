@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import BoxedIcon from '../ui/BoxedIcon';
 import Button from '../ui/Button';
-import { Checkbox } from '../ui/Checkbox';
 import Textfield from '../ui/TextField';
 
 const ContactUsForm = () => {
@@ -94,11 +92,10 @@ const ContactUsForm = () => {
             value={zipcode}
           />
         </div>
-        
-          <div>
-            <Button size='large'>Submit</Button>
-          </div>
-       
+
+        <div>
+          <Button size='large'>Submit</Button>
+        </div>
       </form>
     </div>
   );

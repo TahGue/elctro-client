@@ -5,6 +5,7 @@ import Footer from '../layout/Footer';
 import TopBar from '../TopBar';
 import Header from './Header';
 import SubscribeForm from '../subscribe';
+import { useStateValue } from '../../providers/StateContext';
 
 type Props = {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ type Props = {
 
 const PublicLayout: React.FC<Props> = ({ children, title }) => {
   const { companyFavicon, companyName } = useSettings();
+  const [{ user }] = useStateValue();
 
   return (
     <>
@@ -27,12 +29,11 @@ const PublicLayout: React.FC<Props> = ({ children, title }) => {
       <div className='mx-40 my-5'>
         <TopBar />
         <Header />
-        {children}
-        <br />
-        <div className=''><SubscribeForm/></div>
-        
-      <Footer/>
       </div>
+      <div>{children}</div>
+      <SubscribeForm />
+
+      <Footer />
     </>
   );
 };
