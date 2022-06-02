@@ -1,5 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React from 'react';
+import Button from '../../../ui/Button';
+ 
 
 type IProps = {
   onPayment: (paymentMethod: any) => void;
@@ -19,7 +21,7 @@ function StripeForm({ onPayment, onError }: IProps) {
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
-      currency: 'usd',
+     
     });
 
     if (!error) {
@@ -35,10 +37,10 @@ function StripeForm({ onPayment, onError }: IProps) {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <CardElement />
-      <button type='submit' disabled={!stripe || !elements}>
+      <CardElement options={{ hidePostalCode: true }} />
+      <Button className='mt-2' type='submit' disabled={!stripe || !elements}>
         Pay
-      </button>
+      </Button>
     </form>
   );
 }

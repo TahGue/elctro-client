@@ -8,7 +8,7 @@ function PaymentPage() {
   const [{ cart }] = useStateValue();
 
   return (
-    <div className='p-3'>
+    <div className='p-3 w-1/2 justify-center m-auto '>
       <StripePayment />
     </div>
   );

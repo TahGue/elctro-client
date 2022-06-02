@@ -7,6 +7,6 @@ export const useSettings = () => {
     companyFavicon: '/electroLogo.png',
     currency: 'SEK',
     paypalClientId: 'paypalClientId',
-    stripePublicKey: 'stripePublicKey',
+    stripePublicKey: 'pk_test_51L6CfvLGNKl8XQT7okqWpylpDUGNOfiWO1zkzYdJ9Z9qqIyjP1VHgqjsrRwxd439exQpw4ooxathx5MGwKYPhFv400bMtZhyvm',
   };
 };

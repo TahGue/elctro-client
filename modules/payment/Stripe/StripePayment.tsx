@@ -7,7 +7,7 @@ function StripePayment() {
     <StripeContainer>
       <StripeForm
         onPayment={(id: string) => alert(`paid with id ${id}`)}
-        onError={(err) => alert(err)}
+        onError={(err) => alert (JSON.stringify( err) ) }
       />
     </StripeContainer>
   );

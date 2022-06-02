@@ -1,3 +1,4 @@
+import { useStripePayment } from './../modules/payment/Stripe/useStripePayment';
 export type Category = {
   id: number;
   name: string;
@@ -51,4 +52,15 @@ export type BrandProduct = {
 
 export interface CartProduct extends Product {
   count: number;
+}
+
+
+export type Address = {
+  id: number;
+  name: string;
+  address: string;
+  city: string;
+  postcode: string;
+  country: string;
+  street: string;
 }

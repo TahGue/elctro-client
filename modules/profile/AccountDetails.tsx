@@ -9,6 +9,10 @@ function AccountDetails() {
   const [lastname, setLastName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
+  const [country, setCountry] = useState<string>('');
+  const [city, setCity] = useState<string>('');
+  const [street, setStreet] = useState<string>('');
+  const [postcode, setPostcode] = useState<string>('');
   const [{ user }] = useStateValue();
 
   useEffect(() => {
@@ -17,6 +21,10 @@ function AccountDetails() {
       setLastName(user.name.split(' ')[1]);
       setEmail(user.email);
       setPhone(user.tel);
+      setCountry(user?.address?.country);
+      setCity(user?.address?.city);
+      setStreet(user?.address?.street);
+      setPostcode(user?.address?.postcode);
     }
   }, []);
   return (
@@ -71,6 +79,52 @@ function AccountDetails() {
             value={phone}
           />
         </div>
+        <div className=''>
+          <Textfield
+            label='Country'
+            name='Country_data'
+            placeholder='Your Country'
+            required
+            type='text'
+            onChange={(e) => setCountry(e.target.value)}
+            value={country}
+          />       </div>
+        <div className=''>  
+          <Textfield
+            label='City'
+            name='City_data'
+            placeholder='Your City'
+            required
+            type='text'
+            onChange={(e) => setCity(e.target.value)}
+            value={city}
+          />
+        </div>
+        <div className=''>
+          <Textfield
+            label='Street'
+            name='Street_data'
+            placeholder='Your Street'
+            required
+            type='text'
+            onChange={(e) => setStreet(e.target.value)}
+            value={street}
+          />
+        </div>
+        <div className=''>
+          <Textfield
+            label='Postcode'
+            name='Postcode_data'
+            placeholder='Your Postcode'
+            required
+            type='text'
+            onChange={(e) => setPostcode(e.target.value)}
+            value={postcode}
+          />
+        </div>
+
+
+
         <div className='flex w-full justify-between items-center mt-4'>
           <Button size='large'>Save</Button>
         </div>
