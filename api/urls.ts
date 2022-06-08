@@ -26,5 +26,9 @@ export const urls = {
   },
   payment: {
     stripe: `${BASE_URL}/payment/stripe`,
+    klarnaSession: `${BASE_URL}/payment/klarna-session`,
+  },
+  address: {
+    all: `${BASE_URL}/address`,
   },
 };

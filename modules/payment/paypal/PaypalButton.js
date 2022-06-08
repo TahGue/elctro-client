@@ -35,8 +35,6 @@ export default function PaypalButton({
         },
       })
       .then((orderID) => {
-        console.log('orderID');
-        console.log(orderID);
         setOrderID(orderID);
         onSuccess(orderID);
         return orderID;

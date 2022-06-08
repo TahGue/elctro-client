@@ -5,10 +5,11 @@ import Button from '../../ui/Button';
 import BrandsCarousel from '../brand/brandsCarousel/BrandsCarousel';
 import CategoriesCarousel from '../category/categoriesCarousel/CategoriesCarousel';
 import LatestProducts from '../product/latestProducts/LatestProducts';
+import { Container } from 'react-grid-system';
 
 export default function HomePage() {
   return (
-    <>
+    <Container>
       <CustomSlider>
         <SwiperSlide>
           <div className='w-full h-96 bg-lightgrey rounded-xl p-14  '>
@@ -58,6 +59,6 @@ export default function HomePage() {
 
       <FeaturedProducts />
       <LatestProducts />
-    </>
+    </Container>
   );
 }
