@@ -30,5 +30,6 @@ export const urls = {
   },
   address: {
     all: `${BASE_URL}/address`,
+    user:`${BASE_URL}/address/user`,
   },
 };
