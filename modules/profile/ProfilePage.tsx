@@ -6,7 +6,8 @@ import Favorite from "../../modules/profile/Favorite";
 
 import TopMenu from "../../modules/profile/TopMenu";
 import { useStateValue } from "../../providers/StateContext";
-import Address from "./Address";
+import Addresses from "./Addresses";
+import Address from "./ShippingAddress";
 const ProfilePage = () => {
   const [selectedPage, setSelectedPage] = useState("profile");
 
@@ -19,7 +20,7 @@ const ProfilePage = () => {
         />
 
         {selectedPage === "profile" && <AccountDetails />}
-        {selectedPage === "address" && <Address />}
+        {selectedPage === "address" && <Addresses />}
         {selectedPage === "wishlist" && <Favorite />}
         {selectedPage === "history" && <AccountDetails />}
         {selectedPage === "logout" && <AccountDetails />}

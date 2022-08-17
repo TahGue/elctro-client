@@ -56,11 +56,14 @@ export interface CartProduct extends Product {
 
 
 export type Address = {
-  id: number;
-  name: string;
-  address: string;
+  id: number|undefined;
+  name: string |undefined;
+  address: string |undefined;
   city: string;
   postcode: string;
   country: string;
   street: string;
+  note: string;
+  isBilling: boolean;
+
 }

@@ -3,23 +3,41 @@ import Button from "../../ui/Button";
 import Textfield from "../../ui/TextField";
 import { useState } from "react";
 import { useStateValue } from "../../providers/StateContext";
-import { useAddresses } from "./api/useAddresses";
+import { useAddresses, useSaveAddresses } from "./api/useAddresses";
+import { Address } from "../../types/DBTypes";
 
-export default function Address() {
+export default function BillingAddress() {
   const [country, setCountry] = useState<string>("");
   const [city, setCity] = useState<string>("");
   const [street, setStreet] = useState<string>("");
   const [postcode, setPostcode] = useState<string>("");
   const [note, setNote] = useState<string>("");
   const { data, isLoading } = useAddresses();
-
+  const saveAdress = useSaveAddresses();
+  const onSvaeAdress = () => {
+    saveAdress.mutate({
+      id: undefined,
+      name: undefined,
+      address: undefined,
+      country,
+      city,
+      street,
+      postcode,
+      note,
+      isBilling: true,
+    });
+  };
   useEffect(() => {
-    if (data) {
-      setCountry(data?.address?.country);
-      setCity(data?.address?.city);
-      setStreet(data?.address?.street);
-      setPostcode(data?.address?.postcode);
-      setNote(data?.address?.note);
+    if (data && data.length > 0) {
+      const address = data.find((c:Address) => c.isBilling === true)
+      if (address) {
+        setCountry(data?.address?.country);
+        setCity(data?.address?.city);
+        setStreet(data?.address?.street);
+        setPostcode(data?.address?.postcode);
+        setNote(data?.address?.note);
+      }
+      
     }
   }, [data]);
   return (
@@ -88,7 +106,9 @@ export default function Address() {
         </div>
 
         <div className="flex w-full justify-between items-center mt-4">
-          <Button size="large">Save</Button>
+          <Button onClick={onSvaeAdress} size="large">
+            Save
+          </Button>
         </div>
       </form>
     </div>
