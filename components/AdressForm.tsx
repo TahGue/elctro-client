@@ -94,7 +94,9 @@ const ContactUsForm = () => {
         </div>
 
         <div>
-          <Button size='large'>Submit</Button>
+          <Button type='button' size='large'>
+            Submit
+          </Button>
         </div>
       </form>
     </div>
