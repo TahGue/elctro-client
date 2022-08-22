@@ -26,7 +26,7 @@ const CartDrawer = ({ open = false, onClose }: IProps) => {
               total={calculatePrice(cart)}
               onShopping={onClose}
               onCheckout={() => {
-                router.push('/cart');
+                router.push('/checkout');
                 onClose();
               }}
             />
