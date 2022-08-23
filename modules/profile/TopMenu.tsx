@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import React from "react";
-import TopMenuItem from "./TopMenuItem";
+import { useRouter } from 'next/router';
+import React from 'react';
+import TopMenuItem from './TopMenuItem';
 
 type IProps = {
   onSelect: (a: string) => void;
@@ -10,36 +10,31 @@ function TopMenu({ onSelect, current }: IProps) {
   const router = useRouter();
 
   return (
-    <div className="w-full inline-block text-center my-4">
+    <div className='w-full inline-block text-center my-4'>
       <TopMenuItem
-        title="Profile"
-        onClick={() => onSelect("profile")}
-        current={current === "profile"}
+        title='Profile'
+        onClick={() => onSelect('profile')}
+        current={current === 'profile'}
       />
       <TopMenuItem
-        title="Address"
-        onClick={() => onSelect("address")}
-        current={current === "address"}
+        title='Address'
+        onClick={() => onSelect('address')}
+        current={current === 'address'}
       />
       <TopMenuItem
-        title="Wishlist"
-        onClick={() => onSelect("wishlist")}
-        current={current === "wishlist"}
+        title='Wishlist'
+        onClick={() => onSelect('wishlist')}
+        current={current === 'wishlist'}
       />
       <TopMenuItem
-        title="History"
-        onClick={() => onSelect("history")}
-        current={current === "history"}
+        title='History'
+        onClick={() => onSelect('history')}
+        current={current === 'history'}
       />
       <TopMenuItem
-        title="Settings"
-        onClick={() => onSelect("settings")}
-        current={current === "settings"}
-      />
-      <TopMenuItem
-        title="Logout"
-        onClick={() => onSelect("logout")}
-        current={current === "logout"}
+        title='Logout'
+        onClick={() => onSelect('logout')}
+        current={current === 'logout'}
       />
     </div>
   );

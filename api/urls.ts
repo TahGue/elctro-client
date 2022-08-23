@@ -30,6 +30,9 @@ export const urls = {
   },
   address: {
     all: `${BASE_URL}/address`,
-    user:`${BASE_URL}/address/user`,
+    user: `${BASE_URL}/address/user`,
+  },
+  user: {
+    update: `${BASE_URL}/users/customer`,
   },
 };

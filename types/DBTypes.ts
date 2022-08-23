@@ -54,16 +54,20 @@ export interface CartProduct extends Product {
   count: number;
 }
 
-
 export type Address = {
-  id: number|undefined;
-  name: string |undefined;
-  address: string |undefined;
+  id: number | undefined;
+  name: string | undefined;
+  address: string | undefined;
   city: string;
   postcode: string;
   country: string;
   street: string;
   note: string;
   isBilling: boolean;
+};
 
-}
+export type UserDetailsInput = {
+  name: string;
+  email: string | undefined;
+  tel: string;
+};

@@ -8,17 +8,23 @@ import { Address } from '../../types/DBTypes';
 
 type Iprops = {
   title: string;
+  onSave: (a: Address) => void;
+  address: Address | undefined;
+  isBilling: boolean;
 };
-export default function BillingAddress({ title }: Iprops) {
+export default function AddressForm({
+  title,
+  onSave,
+  address,
+  isBilling,
+}: Iprops) {
   const [country, setCountry] = useState<string>('');
   const [city, setCity] = useState<string>('');
   const [street, setStreet] = useState<string>('');
   const [postcode, setPostcode] = useState<string>('');
   const [note, setNote] = useState<string>('');
-  const { data, isLoading } = useAddresses();
-  const saveAdress = useSaveAddresses();
-  const onSvaeAdress = () => {
-    saveAdress.mutate({
+  const onSaveAddress = () => {
+    onSave({
       id: undefined,
       name: undefined,
       address: undefined,
@@ -27,12 +33,11 @@ export default function BillingAddress({ title }: Iprops) {
       street,
       postcode,
       note,
-      isBilling: true,
+      isBilling: isBilling,
     });
   };
   useEffect(() => {
-    if (data && data.length > 0) {
-      const address = data.find((c: Address) => c.isBilling === true);
+    if (address) {
       if (address) {
         setCountry(address?.country);
         setCity(address?.city);
@@ -41,10 +46,10 @@ export default function BillingAddress({ title }: Iprops) {
         setNote(address?.note);
       }
     }
-  }, [data]);
+  }, [address]);
   return (
-    <div className='w-full mt-2 mb-2'>
-      <h1 className='text-xl text-center text-primary'>{title}</h1>
+    <div className='w-full'>
+      <h1 className='text-xl text-center mt-2 mb-2 text-primary '>{title}</h1>
       <Textfield
         label='Country'
         name='Country_data'
@@ -91,7 +96,7 @@ export default function BillingAddress({ title }: Iprops) {
         value={note}
       />
       <div className='flex w-full justify-between items-center mt-4'>
-        <Button type='button' onClick={onSvaeAdress} size='large'>
+        <Button type='button' onClick={onSaveAddress} size='large'>
           Save
         </Button>
       </div>

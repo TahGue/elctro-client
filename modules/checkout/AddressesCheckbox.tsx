@@ -6,7 +6,7 @@ import { BsCheckCircle, BsCircle } from 'react-icons/bs';
 import AddressModel from '../profile/AdressModel';
 import { useStateValue } from '../../providers/StateContext';
 import CircleLoader from '../../components/loaders/CircleLoader';
-import ShippingAddress from '../profile/ShippingAddress';
+import ShippingAddress from '../profile/AddressForm';
 import { Col, Container, Row } from 'react-grid-system';
 import CartSummery from '../cart/cart/CartSummery';
 import { calculatePrice } from '../../helpers/helper';
