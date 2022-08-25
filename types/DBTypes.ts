@@ -71,3 +71,19 @@ export type UserDetailsInput = {
   email: string | undefined;
   tel: string;
 };
+
+export type RegisterInput = {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  tel: string;
+  personalNumber: string | undefined;
+  isCompany: boolean;
+  companyName: string | undefined;
+  companyOrgNumber: string | undefined;
+  country: string;
+  city: string;
+  street: string;
+  postCode: string;
+};

@@ -40,7 +40,7 @@ function AccountDetails() {
       <form onSubmit={onSubmit} className='w-1/2'>
         <h1 className='text-xl'>Account Details</h1>
         <h2 className='text-lightgrey text-md '>
-          Already have an account? Please,{' '}
+          Already have an account? Please,
           <link rel='stylesheet' href='/login.tsx' />{' '}
         </h2>
         <div>

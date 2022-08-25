@@ -1,11 +1,14 @@
+import { CheckoutApi } from './CheckoutApi';
 import { useQuery } from 'react-query';
-import { AddressApi } from './AddressApi';
 
 export const useAddress = () => {
-  const { data, isLoading, isError } = useQuery('addresses', AddressApi.getAll);
+  const { data, isLoading, isError } = useQuery(
+    'addresses',
+    CheckoutApi.getAllAddresses
+  );
 
   return {
-    data,
+    data: localStorage.getItem('token') ? data : [],
     isLoading,
     isError,
   };

@@ -7,3 +7,5 @@ export const CHANGE_FAVORITE = 'CHANGE_FAVORITE';
 export const SET_USER = 'SET_USER';
 export const DISPLAY_FORM = 'DISPLAY_FORM';
 export const SET_CART = 'SET_CART';
+
+export const SET_IS_COMPNAY = 'SET_IS_COMPNAY';

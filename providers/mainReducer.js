@@ -8,6 +8,7 @@ import {
   REMOVE_FROM_CART,
   DISPLAY_FORM,
   SET_CART,
+  SET_IS_COMPNAY,
 } from './stateTypes';
 
 /*
@@ -30,10 +31,16 @@ export const initialState = {
   favorite: [],
   user: null,
   displayForm: '',
+  isCompany: false,
 };
 // dashboard
 export const reducer = (state, action) => {
   switch (action.type) {
+    case SET_IS_COMPNAY:
+      return {
+        ...state,
+        isCompany: action.payload,
+      };
     case SET_USER:
       return {
         ...state,

@@ -34,7 +34,7 @@ const ProductCard = ({ product }: IProps) => {
   return (
     <div className='relative border border-grey text-center justify-center items-center p-2 m-2'>
       <Link href={`/product/${product.slug}`}>
-        <div className='w-full'>
+        <div className='w-full cursor-pointer'>
           <img src={product?.image} className='w-full h-auto' />
         </div>
       </Link>
@@ -47,12 +47,12 @@ const ProductCard = ({ product }: IProps) => {
       <div>
         <span
           onClick={() => addToFavorite(product)}
-          className=' absolute top-1  left-1 text-red cursor-pointer hover:animate-pulse'
+          className='  absolute -top-1  -left-1 text-red cursor-pointer hover:animate-pulse drop-shadow-lg shadow-white'
         >
           {favorite.find((c: ProductType) => c.id === product.id) ? (
-            <FaHeart size={25} />
+            <FaHeart size={16} />
           ) : (
-            <FiHeart size={25} />
+            <FiHeart size={16} />
           )}
         </span>
       </div>

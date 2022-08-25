@@ -2,7 +2,7 @@ import React from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 type Iprops = {
-  value: string;
+  value: string | undefined;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   name: string;

@@ -2,7 +2,13 @@ import { isFuture, isPast } from 'date-fns';
 import jwtDecode from 'jwt-decode';
 import React, { useEffect } from 'react';
 import { useStateValue } from './StateContext';
-import { CHANGE_CART, CHANGE_FAVORITE, SET_CART, SET_USER } from './stateTypes';
+import {
+  CHANGE_CART,
+  CHANGE_FAVORITE,
+  SET_CART,
+  SET_USER,
+  SET_IS_COMPNAY,
+} from './stateTypes';
 
 type IProps = {
   children: React.ReactNode;
@@ -29,7 +35,16 @@ function LocalStorageLoader({ children }: IProps) {
       type: SET_CART,
       payload: newCart,
     });
+    const isCompany =
+      localStorage.getItem('isCompany') &&
+      localStorage.getItem('isCompany') === 'true'
+        ? true
+        : false;
 
+    changeState({
+      type: SET_IS_COMPNAY,
+      payload: isCompany,
+    });
     const newFavorite = localStorage.getItem('favorite')
       ? JSON.parse(localStorage.getItem('favorite') || '')
       : [];

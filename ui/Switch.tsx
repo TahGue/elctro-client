@@ -2,7 +2,7 @@ import { DetailedHTMLProps, FC, InputHTMLAttributes } from 'react';
 import { Spinner } from './Spinner';
 
 const colorClassNames = {
-  primary: 'bg-primary-500',
+  primary: 'bg-primary',
   success: 'bg-success',
   danger: 'bg-danger',
 };
@@ -68,17 +68,24 @@ export const Switch: FC<Input> = ({
         className={`
           relative
           flex justify-center items-center
+          border rounded-20 border-lightgreyx2
           ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}
           ${loading ? ' cursor-wait ' : 'cursor-pointer'}
           `}
       >
-        <input checked={checked} type="checkbox" className="opacity-0 absolute" onChange={onChange} {...props} />
+        <input
+          checked={checked}
+          type='checkbox'
+          className='opacity-0 absolute'
+          onChange={onChange}
+          {...props}
+        />
         <div
           className={`${sizeClassnames[size]}
            rounded-full shadow-inner
            opacity-25
            transition
-           ${checked ? colorClassNames[color] : 'bg-gray-500'}
+           ${checked ? colorClassNames[color] : ' bg-white'}
            `}
         ></div>
         <div
@@ -86,13 +93,16 @@ export const Switch: FC<Input> = ({
             absolute 
             flex justify-center items-center
             transform rounded-full shadow transition
+            bg-gray
             text-button
             ${indecatorSizeClassnames[size]}
-            ${checked ? colorClassNames[color] : 'bg-gray-500'}
+            ${checked ? colorClassNames[color] : 'bg-gray'}
             ${checked && indecatorTranslateClassnames[size]}
             `}
         >
-          {loading && <Spinner size={size === 'small' || size === 'tiny' ? '2' : '4'} />}
+          {loading && (
+            <Spinner size={size === 'small' || size === 'tiny' ? '2' : '4'} />
+          )}
         </div>
       </div>
     </div>
