@@ -9,3 +9,7 @@ export type Paths<T> = {
     ? Join<K, Paths<T[K]>>
     : K;
 }[keyof T];
+
+export type ErrorType = {
+  message: string;
+};

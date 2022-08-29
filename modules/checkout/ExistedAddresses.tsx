@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAddress } from './useAddresses';
+import { useAddress } from './hooks/useAddresses';
 import { Address } from '../../types/DBTypes';
 import CircleLoader from '../../components/loaders/CircleLoader';
 import { BsCheckCircle, BsCircle } from 'react-icons/bs';
@@ -21,7 +21,7 @@ function ExistedAddresses({ onSelect, selected }: Iprops) {
       {data?.map((address: Address) => (
         <div
           onClick={() => onSelectAddress(address)}
-          className='flex flex-row items-center'
+          className='flex flex-row items-center cursor-pointer'
           key={address.id}
         >
           {selected?.id === address.id ? (

@@ -10,6 +10,7 @@ import CartSummery from '../cart/cart/CartSummery';
 import PaymentPage from '../payment/PaymentPage';
 import AddressesCheckbox from './AddressesCheckbox';
 import { CheckoutForm } from './CheckoutForm';
+import ExistedAddresses from './ExistedAddresses';
 import ReviewCart from './ReviewCart';
 import UserInfo from './sections/UserInfo';
 
@@ -28,7 +29,10 @@ function CheckoutPage() {
               isActive={currentPage === 0}
               onGoNext={() => setCurrentPage(currentPage + 1)}
             />
-            <div> Shipping method</div>
+            <AddressesCheckbox
+              onSelect={setSelectedAddress}
+              selectedAddress={selectedAddress}
+            />
             <div> payment </div>
           </Col>
           <Col lg={4} md={6} sm={12}>

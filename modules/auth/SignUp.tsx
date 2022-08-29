@@ -16,7 +16,7 @@ export default function SignUp({ setCurrentPage, callbackUrl = '/' }: Iprops) {
   const [tel, setTel] = useState('');
   const [personal_number, setPersonal_number] = useState('');
   const [password, setPassword] = useState('');
-  const [comfirmpassword, setComfirmPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const router = useRouter();
 
@@ -24,13 +24,14 @@ export default function SignUp({ setCurrentPage, callbackUrl = '/' }: Iprops) {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (password === comfirmpassword) {
+    if (password === confirmPassword) {
       registerMutate({
         email,
         password,
         name: `${firstName} ${lastName}`,
         tel,
         personal_number,
+        confirmPassword,
       });
       router.push(callbackUrl);
     }
@@ -115,9 +116,9 @@ export default function SignUp({ setCurrentPage, callbackUrl = '/' }: Iprops) {
                               type='text'
                               required
                               onChange={(e) =>
-                                setComfirmPassword(e.target.value)
+                                setConfirmPassword(e.target.value)
                               }
-                              value={comfirmpassword}
+                              value={confirmPassword}
                             />
                           </div>
                           <div>

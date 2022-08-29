@@ -1,8 +1,10 @@
+import { ErrorType } from './../../../types/common';
 import jwtDecode from 'jwt-decode';
 import { useMutation } from 'react-query';
 import { useStateValue } from '../../../providers/StateContext';
 import { SET_USER } from '../../../providers/stateTypes';
 import Atuh from './Auth';
+import toast from 'react-hot-toast';
 
 export const useRegister = () => {
   const [{}, changeState] = useStateValue();
@@ -16,8 +18,8 @@ export const useRegister = () => {
         payload: jwtDecode(data.token),
       });
     },
-    onError: () => {
-      console.log('register error');
+    onError: (error: ErrorType) => {
+      toast.error(error.message || 'Something went wrong');
     },
   });
 

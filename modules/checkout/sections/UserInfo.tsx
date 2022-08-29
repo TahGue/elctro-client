@@ -1,5 +1,8 @@
+import { useTranslation } from 'next-export-i18n';
 import React, { useState } from 'react';
+import { FaCheckCircle } from 'react-icons/fa';
 import { useStateValue } from '../../../providers/StateContext';
+import { DISPLAY_FORM } from '../../../providers/stateTypes';
 import AddressForm from '../../profile/AddressForm';
 import RegisterNewUser from './RegisterNewUser';
 
@@ -8,19 +11,28 @@ type IProps = {
   onGoNext: () => void;
 };
 function UserInfo({ isActive, onGoNext }: IProps) {
-  const [{ user }] = useStateValue();
+  const [{ user }, changeState] = useStateValue();
   const [displayForm, setDisplayForm] = useState(false);
-
+  const { t } = useTranslation();
+  const onDisplayLogin = () => {
+    changeState({
+      type: DISPLAY_FORM,
+      payload: 'login',
+    });
+  };
   if (user) {
     return (
       <div
-        className={`border border-1 w-full ${
-          isActive ? 'border-primary' : 'border-grey'
+        className={`border border-1 w-full rounded-8 p-2 ${
+          isActive ? 'border-green' : 'border-grey'
         }`}
       >
         <div className='flex justify-between items-center w-full'>
           <div>
             <h3>{user.name}</h3>
+          </div>
+          <div className='text-green'>
+            <FaCheckCircle />
           </div>
         </div>
       </div>
@@ -34,23 +46,13 @@ function UserInfo({ isActive, onGoNext }: IProps) {
       }`}
     >
       <button
-        onClick={() => setDisplayForm(!displayForm)}
+        onClick={onDisplayLogin}
         className='flex justify-between items-center w-full'
       >
         <div>
-          <h3>Add adddress</h3>
+          <h3>{t('pleaseLogin')}</h3>
         </div>
       </button>
-      {displayForm && (
-        <RegisterNewUser
-          title='Your information'
-          onSave={() => {
-            setDisplayForm(false);
-            onGoNext();
-          }}
-          displayNote={false}
-        />
-      )}
     </div>
   );
 }

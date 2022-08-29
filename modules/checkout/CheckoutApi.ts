@@ -1,6 +1,6 @@
 import { urls } from '../../api/urls';
 import axiosInstance from '../../api/axiosinstance';
-import { RegisterInput } from '../../types/DBTypes';
+import { Address, RegisterInput } from '../../types/DBTypes';
 
 export class CheckoutApi {
   static getAllAddresses = async () => {
@@ -13,5 +13,9 @@ export class CheckoutApi {
       .post(urls.auth.register, data)
       .then((dt) => dt.data)
       .catch((err) => err);
+  }
+
+  static async saveAddress(data: Address) {
+    return axiosInstance.post(urls.address.user, data).then((dt) => dt.data);
   }
 }

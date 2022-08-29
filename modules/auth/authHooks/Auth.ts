@@ -9,6 +9,7 @@ type loginInput = {
 type registerInput = {
   email: string;
   password: string;
+  confirmPassword: string;
   name: string;
   tel: string;
   personal_number: string;

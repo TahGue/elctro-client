@@ -3,6 +3,8 @@ import { useMutation } from 'react-query';
 import Atuh from './Auth';
 import { useStateValue } from '../../../providers/StateContext';
 import { SET_USER } from '../../../providers/stateTypes';
+import toast from 'react-hot-toast';
+import { ErrorType } from '../../../types/common';
 
 export const useLogin = () => {
   const [{}, changeState] = useStateValue();
@@ -15,9 +17,11 @@ export const useLogin = () => {
         type: SET_USER,
         payload: jwtDecode(data.token),
       });
+
+      toast.success('logged in successfully');
     },
-    onError: () => {
-      console.log('login error');
+    onError: (err: ErrorType) => {
+      toast.error(err.message || 'Something went wrong');
     },
   });
 
