@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-export-i18n';
 import translations from '../public/locales/en-GB/translation.json';
 import { Paths } from '../types/common';
 

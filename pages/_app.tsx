@@ -1,10 +1,8 @@
-import { appWithTranslation } from 'next-i18next';
 import '../styles/index.css';
 import type { AppProps } from 'next/app';
 import PublicLayout from '../components/layout/PublicLayout';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import nextI18NextConfig from '../next-i18next.config';
 import { StateContext, StateProvider } from '../providers/StateContext';
 import { initialState, reducer } from '../providers/mainReducer';
 import LocalStorageLoader from '../providers/LocalStorageLoader';
@@ -33,4 +31,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default appWithTranslation(MyApp, nextI18NextConfig);
+export default MyApp;

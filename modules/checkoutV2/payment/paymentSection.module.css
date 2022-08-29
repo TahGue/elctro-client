@@ -1,0 +1,16 @@
+.container {
+  padding: 20px;
+  border: 1px solid #ff6600;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+.inActiveContainer {
+  padding: 20px;
+  border: 1px solid #3c3c3c50;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+.title {
+  font-size: 1em;
+  color: #3c3c3c50;
+}

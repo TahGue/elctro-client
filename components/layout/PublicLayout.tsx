@@ -6,6 +6,8 @@ import TopBar from '../TopBar';
 import Header from './Header';
 import SubscribeForm from '../subscribe';
 import { useStateValue } from '../../providers/StateContext';
+import { LanguageSwitcher } from 'next-export-i18n';
+import CustomLanguageSwitcher from '../languageSwitcher/LanguageSwitcher';
 
 type Props = {
   children: React.ReactNode;
@@ -17,7 +19,7 @@ const PublicLayout: React.FC<Props> = ({ children, title }) => {
   const [{ user }] = useStateValue();
 
   return (
-    <>
+    <div style={{ position: 'relative' }}>
       <Head>
         <link
           rel='shortcut icon'
@@ -32,9 +34,9 @@ const PublicLayout: React.FC<Props> = ({ children, title }) => {
       </div>
       <div>{children}</div>
       <SubscribeForm />
-
+      <CustomLanguageSwitcher />
       <Footer />
-    </>
+    </div>
   );
 };
 

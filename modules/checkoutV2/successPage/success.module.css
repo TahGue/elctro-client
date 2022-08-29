@@ -1,0 +1,29 @@
+.container {
+  padding: 30px;
+}
+
+.content {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.btn {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 50%;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  min-width: 100px;
+  margin: 0 auto;
+  border: 1px solid transparent;
+}
+.btn:hover {
+  background-color: #fff;
+  color: #ff6600;
+  border-radius: 5px;
+  border: 1px solid #ff6600;
+}
