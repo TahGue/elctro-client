@@ -33,7 +33,7 @@ function CheckoutPage() {
               onSelect={setSelectedAddress}
               selectedAddress={selectedAddress}
             />
-            <div> payment </div>
+            <PaymentPage />
           </Col>
           <Col lg={4} md={6} sm={12}>
             <Cart />
