@@ -14,7 +14,6 @@ import { RiMastercardLine, RiPaypalLine, RiVisaFill } from 'react-icons/ri';
 import { useSettings } from '../../hooks/useSettings';
 import BoxedIcon from '../../ui/BoxedIcon';
 
-import CategoriesMenu from '../categoriesMenu/CategoriesMenu';
 import MenuLinks from '../menuLinks/MenuLinks';
 import PaymentIcons from '../../ui/PaymentIcons';
 import SubscribeForm from '../subscribe';

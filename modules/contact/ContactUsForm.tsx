@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Button from '../ui/Button';
-import { Checkbox } from '../ui/Checkbox';
-import Textfield from '../ui/TextField';
+import Button from '../../ui/Button';
+import { Checkbox } from '../../ui/Checkbox';
+import Textfield from '../../ui/TextField';
 
 const ContactUsForm = () => {
   const [email, setEmail] = useState('');

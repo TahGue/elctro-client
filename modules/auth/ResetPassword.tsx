@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Textfield from '../../ui/TextField';
 import Button from '../../ui/Button';
-import { useResetPassword } from '../../hooks/auth/useResetPassword';
+import { useResetPassword } from './authHooks/useResetPassword';
 
 type Iprops = {
   onSuccess?: () => void;

@@ -3,7 +3,14 @@ import { useStateValue } from '../../../providers/StateContext';
 import Button from '../../../ui/Button';
 import { getOrder, getProduct, createSession, createOrder } from './Api';
 
-const toOderLine = ({ name, price, id, image, quentity }) => ({
+type IProps = {
+  name: string;
+  price: number;
+  id: string;
+  image: string;
+  quentity: number;
+};
+const toOderLine = ({ name, price, id, image, quentity }: IProps) => ({
   type: 'physical',
   reference: id,
   image_url: image,
@@ -48,7 +55,7 @@ function KlarnaPage() {
       order_lines: cart.map(toOderLine),
     });
     const { client_token } = response.data;
-    const Klarna = window.Klarna;
+    const Klarna = (window as any).Klarna;
     Klarna.Payments.init({
       client_token,
     });
@@ -58,7 +65,7 @@ function KlarnaPage() {
         container: '#klarna-payments-container',
         payment_method_category: 'pay_later',
       },
-      (res) => {
+      () => {
         setWidgetLoaded(true);
       }
     );

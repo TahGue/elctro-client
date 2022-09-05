@@ -20,13 +20,13 @@ function StripeForm({ onPayment, onError }: IProps) {
     const { error, paymentMethod } = stripe
       ? await stripe?.createPaymentMethod({
           type: 'card',
-          card: elements.getElement(CardElement),
+          card: elements.getElement(CardElement) || { token: '' },
         })
       : { error: '', paymentMethod: null };
 
     if (!error) {
       try {
-        const { id } = paymentMethod;
+        const id = paymentMethod || '';
         onPayment(id);
       } catch (error) {
         onError(error);
