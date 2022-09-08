@@ -14,7 +14,8 @@ import CountChanger from '../cart/cart/CountChanger';
 import IconText from '../../components/shared/IconText';
 import Price from '../../components/shared/Price';
 import { useSettings } from '../../hooks/useSettings';
-
+import Product from './Product';
+import ImageSlider from './../../components/shared/imageSlider/ImageSlider';
 export default function ProductPage() {
   const router = useRouter();
   const { slug } = router.query;
@@ -49,16 +50,12 @@ export default function ProductPage() {
           <div>
             <Container>
               <Row>
-                <Col>
-                  <div className=' flex justify-center items-center  w-full relative p-4  '>
-                    <Image
-                      src={data?.image}
-                      layout='fixed'
-                      width={650}
-                      height={450}
-                      className=' rounded-8 mr-2 broder-2'
-                    />
-                  </div>
+                <Col lg={6} md={6} sm={12}>
+                  <ImageSlider
+                    images={
+                      [data?.image, ...data?.images] || ['electroLogo.png']
+                    }
+                  />
                 </Col>
                 <Col>
                   <div className=' '>
@@ -76,7 +73,7 @@ export default function ProductPage() {
                     <h3 className=' text-3xl '> {data?.name}</h3>
                     <Price
                       price={data?.price}
-                      oldPrice={200}
+                      oldPrice={data?.oldPrice}
                       currency={currency}
                     />
 
@@ -86,11 +83,7 @@ export default function ProductPage() {
                       <IconText Icon={<FaCarSide />} text='Free delivery' />
                     </div>
                   </div>
-                  <h3 className=' text-xl mt-2'>description</h3>
 
-                  <div className='mt-5 mb-5  text-sm'>
-                    <p>{data.description}</p>
-                  </div>
                   <CountChanger value={count} changeCount={setCount} />
 
                   <Button
@@ -99,6 +92,15 @@ export default function ProductPage() {
                   >
                     Add to cart
                   </Button>
+
+                  <div className='mt-5 mb-5  text-sm'>
+                    <h3 className=' text-xl mt-2'>description</h3>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data?.description,
+                      }}
+                    />
+                  </div>
                 </Col>
               </Row>
             </Container>

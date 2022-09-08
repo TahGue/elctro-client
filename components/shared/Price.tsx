@@ -16,7 +16,7 @@ function Price({ price, oldPrice, currency, size = 'xl' }: IProps) {
   return (
     <div className={`flex items-center ${sizes[size]}`}>
       <span>{`${price} ${currency}`}</span>
-      {oldPrice && (
+      {oldPrice && oldPrice < price && (
         <span className='line-through text-grey  m-2'>{`${oldPrice} ${currency}`}</span>
       )}
     </div>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Category } from '../../../types/DBTypes';
 
 type IProps = {
-  categories: Category[];
+  categories: Category[] | undefined;
 };
 export default function CategoriesList({ categories }: IProps) {
   return (
@@ -15,7 +15,13 @@ export default function CategoriesList({ categories }: IProps) {
             className='flex items-center mt-1 cursor-pointer hover:bg-lightgreyx2 p-3 '
           >
             <Image
-              src={category?.image}
+              src={
+                category.image &&
+                category.image !== '' &&
+                category.image !== null
+                  ? category.image
+                  : '/electroLogo.png'
+              }
               layout='fixed'
               width={25}
               height={25}

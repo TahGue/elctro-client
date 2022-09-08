@@ -17,7 +17,11 @@ export default function BrandItem({ selected, onSelect, brand }: IProps) {
       <div className='flex items-center justify-start'>
         <div className='pr-2'>
           <Image
-            src={`${brand?.image}`}
+            src={`${
+              brand?.image && brand.image !== '' && brand.image !== null
+                ? brand.image
+                : '/electroLogo.png'
+            }`}
             layout='fixed'
             width={30}
             height={30}

@@ -16,7 +16,12 @@ const SearchProductItem = ({ product }: IProps) => {
     <div className='flex justify-between items-center  mt-2'>
       <div className='flex'>
         <div className='rounded-l-md'>
-          <Image src={product?.image} layout='fixed' width={376} height={243} />
+          <Image
+            src={product?.image || '/electroLogo.png'}
+            layout='fixed'
+            width={376}
+            height={243}
+          />
         </div>
         <div className='flex flex-col justify-around p-1'>
           <div className='mt-1 text-xl '>

@@ -12,7 +12,7 @@ function CountChanger({ value, changeCount }: IProps) {
       <div className='h-full'>
         <Button
           onClick={() => {
-            changeCount(value - 1);
+            value >= 2 && changeCount(value - 1);
           }}
         >
           <HiMinusSm />

@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import Image from 'next/image';
-import { Col, Container, Row } from 'react-grid-system';
 import ProductCard from '../../components/product/ProductCard';
 import { CategoryProduct, Product } from '../../types/DBTypes';
 import CategoriesCarousel from './categoriesCarousel/CategoriesCarousel';
 import CircleLoader from '../../components/loaders/CircleLoader';
 import { useCategory } from './categoryHooks/useCategory';
+import { Col, Container, Row } from 'react-grid-system';
 
 export default function CategoryPage() {
   const router = useRouter();
@@ -23,7 +23,7 @@ export default function CategoryPage() {
         <div className=' min-h-screen '>
           <div className=' flex justify-center items-center w-full relative p-4'>
             <Image
-              src={data?.image}
+              src={data?.image || 'electroLogo.png'}
               layout='fixed'
               width={50}
               height={50}

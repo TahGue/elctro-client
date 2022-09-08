@@ -17,7 +17,7 @@ export default function CategoryItem({ selected, onSelect, category }: IProps) {
       <div className='flex items-center justify-start'>
         <div className='pr-2'>
           <Image
-            src={`${category?.image}`}
+            src={`${category?.image || '/electroLogo.png'}`}
             layout='fixed'
             width={30}
             height={30}

@@ -11,10 +11,10 @@ export const urls = {
     bySlug: `${BASE_URL}/brand/slug`,
   },
   product: {
-    featured: `${BASE_URL}/product/featured`,
+    featured: `${BASE_URL}/product/feature`,
     latest: `${BASE_URL}/product/latest`,
     shop: `${BASE_URL}/product/shop`,
-    getBySlug: `${BASE_URL}/product/slug`,
+    getBySlug: `${BASE_URL}/product/details`,
     search: `${BASE_URL}/product/search`,
   },
   auth: {

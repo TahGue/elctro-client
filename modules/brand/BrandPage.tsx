@@ -23,7 +23,7 @@ export default function BrandPage() {
         <div className=' min-h-screen '>
           <div className=' flex justify-center items-center w-full relative p-4'>
             <Image
-              src={data?.image}
+              src={data?.image || '/electroLogo.png'}
               layout='fixed'
               width={50}
               height={50}
