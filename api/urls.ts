@@ -2,20 +2,20 @@ export const BASE_URL = 'http://127.0.0.1:8083/rest';
 
 export const urls = {
   category: {
-    all: `${BASE_URL}/categories/`,
-    details: `${BASE_URL}/categories/`,
-    bySlug: `${BASE_URL}/categories/slug`,
+    all: `${BASE_URL}/category/`,
+    details: `${BASE_URL}/category/`,
+    bySlug: `${BASE_URL}/category/slug`,
   },
   brand: {
-    all: `${BASE_URL}/brands/`,
-    bySlug: `${BASE_URL}/brands/slug`,
+    all: `${BASE_URL}/brand/`,
+    bySlug: `${BASE_URL}/brand/slug`,
   },
   product: {
-    featured: `${BASE_URL}/products/featured`,
-    latest: `${BASE_URL}/products/latest`,
-    shop: `${BASE_URL}/products/shop`,
-    getBySlug: `${BASE_URL}/products/slug`,
-    search: `${BASE_URL}/products/search`,
+    featured: `${BASE_URL}/product/featured`,
+    latest: `${BASE_URL}/product/latest`,
+    shop: `${BASE_URL}/product/shop`,
+    getBySlug: `${BASE_URL}/product/slug`,
+    search: `${BASE_URL}/product/search`,
   },
   auth: {
     login: `${BASE_URL}/auth/user`,
@@ -29,10 +29,10 @@ export const urls = {
     klarnaSession: `${BASE_URL}/payment/klarna-session`,
   },
   address: {
-    all: `${BASE_URL}/address`,
-    user: `${BASE_URL}/address/user`,
+    all: `${BASE_URL}/user/addresses`,
+    user: `${BASE_URL}/user/addresses`,
   },
   user: {
-    update: `${BASE_URL}/users/customer`,
+    update: `${BASE_URL}/user`,
   },
 };
