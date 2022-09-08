@@ -33,21 +33,21 @@ const ProductCard = ({ product }: IProps) => {
   };
   return (
     <div className='relative border border-grey text-center justify-center items-center p-2 m-2 w-full'>
-      <Link href={`/product/${product.slug}`}>
+      <Link href={`/product/${product?.slug}`}>
         <div className='w-full cursor-pointer h-24 relative'>
           <Image
-            src={product?.image}
+            src={product?.image || '/elctroLogo.png'}
             layout='fill'
             className='w-full relative object-contain h-auto'
-            alt={product.slug}
+            alt={product?.slug}
           />
         </div>
       </Link>
       <div>
         <div className=' text-sm font-bold w-full h-11 flex justify-center items-center'>
-          <p>{product.name}</p>
+          <p>{product?.name}</p>
         </div>
-        <span>{`${product.price} ${currency}`}</span>
+        <span>{`${product?.price} ${currency}`}</span>
       </div>
       <div>
         <span

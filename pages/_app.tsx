@@ -10,6 +10,7 @@ import { initialState, reducer } from '../providers/mainReducer';
 import LocalStorageLoader from '../providers/LocalStorageLoader';
 import FormsContainer from '../providers/FormsContainer';
 import toast, { Toaster } from 'react-hot-toast';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();

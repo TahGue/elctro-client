@@ -1,4 +1,9 @@
 @import '~react-image-gallery/styles/css/image-gallery.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -77,4 +82,16 @@ body {
   z-index: 10;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+.image-gallery-svg {
+  @apply text-primary;
+}
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:focus {
+  @apply border-primary;
+}
+
+image-gallery-thumbnail.active,
+.image-gallery-thumbnail:hover {
+  @apply border-primary;
 }

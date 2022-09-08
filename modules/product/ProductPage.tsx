@@ -43,7 +43,7 @@ export default function ProductPage() {
   };
 
   return (
-    <div>
+    <div className='bg-white p-2'>
       {isLoading && <CircleLoader />}
       {!isLoading && data && (
         <div className='min-h-screen'>
@@ -51,11 +51,13 @@ export default function ProductPage() {
             <Container>
               <Row>
                 <Col lg={6} md={6} sm={12}>
-                  <ImageSlider
-                    images={
-                      [data?.image, ...data?.images] || ['electroLogo.png']
-                    }
-                  />
+                  <div className=' border border-primary '>
+                    <ImageSlider
+                      images={
+                        [data?.image, ...data?.images] || ['electroLogo.png']
+                      }
+                    />
+                  </div>
                 </Col>
                 <Col>
                   <div className=' '>

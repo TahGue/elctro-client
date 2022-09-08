@@ -16,7 +16,7 @@ export default function CategoriesCarousel({
 
   return (
     <div className='p-1 w-full m-2'>
-      <CustomSlider slidesPerView={5} navigation={false}>
+      <CustomSlider slidesPerView={7} navigation={false}>
         {data?.map((category: Category) => (
           <SwiperSlide key={category.id}>
             <Link href={`/category/${category.slug}`}>
